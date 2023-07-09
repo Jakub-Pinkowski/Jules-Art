@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-md">
         <div class="container-fluid">
             <router-link class="nav-link" to="/">
                 <TheLogo />

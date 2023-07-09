@@ -2,7 +2,8 @@
     <TheHead />
 
     <body>
-        <TheHeader />
+        <TheHeader class="desktop" />
+        <TheNavigation class="mobile" />
         <main>
             <router-view></router-view>
         </main>
@@ -14,10 +15,34 @@
 import TheHead from '@/components/TheHead.vue'
 import TheHeader from '@/components/TheHeader.vue'
 import TheFooter from '@/components/TheFooter.vue'
+import TheNavigation from '@/components/TheNavigation.vue'
 
 </script>
 
 <style lang="scss">
+.desktop {
+    display: block;
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    h1 {
+        margin-top: 3rem;
+    }
+
+}
+
 body {
     display: flex;
     flex-direction: column;

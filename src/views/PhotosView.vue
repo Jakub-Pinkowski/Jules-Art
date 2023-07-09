@@ -139,4 +139,5 @@ const closeModal = () => {
 .modal-leave-to {
     opacity: 0;
 }
+
 </style>

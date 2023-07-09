@@ -1,26 +1,32 @@
 <template>
     <section id="about">
-        <section class="photo">
-            <img src="../assets/images/about.jpg" alt="artist-photo" />
-        </section>
-        <section class="text">
-            <h1>Hello World!</h1>
-            <h2>Artistic soul. Berlin.</h2>
-            <p>
-                Photography is my passion and I would like to share my best
-                work here. I am interested in traveling, aesthetics, and
-                fashion photography. Recently, I've started diving into
-                videography and I hope to share my first work soon. I will
-                be happy to work on interesting projects and welcome all
-                creative souls to reach out to me via social platforms.
-            </p>
-            <div class="social-media">
-                <a target="_blank" href="https://www.facebook.com/julesmatiasart"><img src="../assets/icons/fb_icon.svg"
-                        class="icon" alt="Facebook icon" /></a>
-                <a target="_blank" href="https://www.instagram.com/jules_matias/?hl=en"><img
-                        src="../assets/icons/insta_icon.svg" class="icon" alt="Instagram icon" /></a>
-            </div>
-        </section>
+        <div class="description">
+            <h1>About</h1>
+        </div>
+        <div class="about_description">
+            <section class="photo">
+                <img src="../assets/images/about.jpg" alt="artist-photo" />
+            </section>
+            <section class="text">
+                <h2>Hello World!</h2>
+                <h3>Artistic soul. Berlin.</h3>
+                <p>
+                    Photography is my passion and I would like to share my best
+                    work here. I am interested in traveling, aesthetics, and
+                    fashion photography. Recently, I've started diving into
+                    videography and I hope to share my first work soon. I will
+                    be happy to work on interesting projects and welcome all
+                    creative souls to reach out to me via social platforms.
+                </p>
+                <div class="social-media">
+                    <a target="_blank" href="https://www.facebook.com/julesmatiasart"><img src="../assets/icons/fb_icon.svg"
+                            class="icon" alt="Facebook icon" /></a>
+                    <a target="_blank" href="https://www.instagram.com/jules_matias/?hl=en"><img
+                            src="../assets/icons/insta_icon.svg" class="icon" alt="Instagram icon" /></a>
+                </div>
+            </section>
+        </div>
+
     </section>
 </template>
 
@@ -30,8 +36,15 @@
 <style scoped lang="scss">
 #about {
 
-    display: flex;
-    margin: 4rem 2rem;
+    margin: 1rem 2rem;
+
+    .about_description {
+        margin-top: 5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 
     .photo {
         display: flex;
@@ -40,9 +53,9 @@
         width: 40%;
 
         img {
-            width: 70%;
+            width: 80%;
             height: auto;
-            border-radius: 5%;
+            border-radius: 3%;
         }
     }
 
@@ -60,6 +73,22 @@
             height: 3rem;
             margin-right: 1rem;
         }
+    }
+
+    @media screen and (max-width: 768px) {
+        .about_description {
+            flex-direction: column;
+        }
+
+        .photo {
+            width: 100%;
+            margin-bottom: 3rem;
+        }
+
+        .text {
+            width: 100%;
+        }
+
     }
 }
 </style>
