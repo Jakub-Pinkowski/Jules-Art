@@ -7,7 +7,7 @@
             <div class="choice">
                 <h3>Read more about me</h3>
                 <router-link to="/about">
-                    <img src="../assets/images/about.jpg" alt="about_me">
+                    <img src="../assets/images/about_cropped.png" alt="about_me">
                 </router-link>
 
             </div>
