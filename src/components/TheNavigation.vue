@@ -16,7 +16,7 @@
                     <li @click='close()'>Photos</li>
                 </router-link>
                 <router-link to="/videos">
-                    <li @click='close()'>Contact</li>
+                    <li @click='close()'>Videos</li>
                 </router-link>
             </ul>
         </div>

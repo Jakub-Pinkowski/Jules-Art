@@ -69,4 +69,19 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    #choice_container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+
+    .choice {
+        width: 80% !important;
+        height: auto;
+    }
+
+}
 </style>
