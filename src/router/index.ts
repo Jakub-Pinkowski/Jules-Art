@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView.vue';
 
-
 const router = createRouter({
     history: createWebHistory(),
     routes: [
@@ -19,12 +18,6 @@ const router = createRouter({
             path: '/photos',
             name: 'photos',
             component: () => import('../views/PhotosView.vue'),
-        },
-        {
-            path: '/photos/:id',
-            name: 'photo',
-            component: () => import('../components/PhotoView.vue'),
-            props: true,
         },
         {
             path: '/videos',

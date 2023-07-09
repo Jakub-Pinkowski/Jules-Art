@@ -20,7 +20,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue'
 
 const name = ref('')
@@ -119,6 +119,7 @@ form {
 }
 
 @media screen and (max-width: 768px) {
+
     input,
     textarea {
         width: 100% !important;
