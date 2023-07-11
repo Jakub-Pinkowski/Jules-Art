@@ -6,7 +6,8 @@
         <div class="video_container">
             <div class="video">
                 <video src="../assets/videos/Berlin_Romance.mov" poster="../assets/images/video_1.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4" controls muted></video>
+                    class="w-100 shadow-1-strong rounded mb-4" controls autoplay muted></video>
+                <div id="sound_message" class="message">Sound on recommended</div>
             </div>
             <div class="video">
                 <video src="../assets/videos/Berlin_Romance_part_2.mov" poster="../assets//images/video_2.jpg"
@@ -38,7 +39,21 @@
             height: 100%;
             margin: 2rem;
         }
+
+        .message {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            display: none;
+        }
     }
+
+
 
 }
 

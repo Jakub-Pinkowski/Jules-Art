@@ -38,7 +38,8 @@ const submitForm = () => {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'api-key': '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'
+            'api-key': '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',
+            'accept': 'application/json'
         },
         body: JSON.stringify({
             sender: {

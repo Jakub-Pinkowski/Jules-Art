@@ -5,7 +5,11 @@
         <TheHeader class="desktop" />
         <TheNavigation class="mobile" />
         <main>
-            <router-view></router-view>
+            <router-view v-slot="{ Component }">
+                <transition name="slide-blur" mode="out-in">
+                    <component :is="Component" />
+                </transition>
+            </router-view>
         </main>
         <TheFooter />
     </body>
@@ -73,5 +77,27 @@ p {
     font-size: 1.3rem;
     font-weight: 300;
     margin-bottom: 2rem;
+}
+
+/* Transition classes */
+
+.slide-blur-enter-active {
+    transition: all .3s ease;
+}
+
+.slide-blur-leave-active {
+    transition: all .3s ease-in-out;
+}
+
+.slide-blur-enter {
+    transform: translateX(-10px);
+    filter: blur(2px);
+    opacity: 0;
+}
+
+.slide-blur-leave-to {
+    transform: translateX(10px);
+    filter: blur(2px);
+    opacity: 0;
 }
 </style>

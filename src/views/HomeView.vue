@@ -21,7 +21,7 @@
             <div class="choice">
                 <h3>Checkout my videos</h3>
                 <router-link to="/videos">
-                    <img src="../assets/images/3.jpg" alt="videos">
+                    <img src="../assets/images/video_1_cropped.jpg" alt="videos">
                 </router-link>
 
             </div>
