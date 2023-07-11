@@ -51,6 +51,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: var(--light-gray);
 }
 
 h1 {
@@ -61,19 +62,21 @@ h1 {
 }
 
 h2 {
-    color: var(--gray);
+    color: var(--dark-gray);
     font-size: 1.8rem;
     font-weight: 400;
     margin-bottom: 2rem;
 }
 
 h3 {
+    color: var(--dark-gray);
     font-size: 1.6rem;
     font-weight: 400;
     margin-bottom: 2rem;
 }
 
 p {
+    color: var(--dark-gray);
     font-size: 1.3rem;
     font-weight: 300;
     margin-bottom: 2rem;

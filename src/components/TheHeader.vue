@@ -18,6 +18,9 @@
                     <li class="nav-item">
                         <router-link class="nav-link" to="/videos">Videos</router-link>
                     </li>
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/reels">Reels</router-link>
+                    </li>
                 </ul>
             </div>
         </div>

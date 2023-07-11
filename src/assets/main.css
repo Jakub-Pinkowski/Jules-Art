@@ -2,8 +2,9 @@
 
 :root {
     --main-bg-color: #590d22;
-    --dark-gray: #282829
+    --dark-gray: #28282a;
     --gray: #4e4e50;
+    --light-gray: #f5f5f5;
     --highlight-color: #a4133c;
     --accent-color: #ff4d6d;
     --dark-accent: #800f2f;

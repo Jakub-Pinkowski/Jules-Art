@@ -2,9 +2,7 @@
     <section id="photos">
         <div class="description">
             <h1>Photos</h1>
-            <h2>My last works</h2>
         </div>
-
 
         <!-- Gallery -->
         <div class="row gallery">

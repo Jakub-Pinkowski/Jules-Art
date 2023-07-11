@@ -18,6 +18,9 @@
                 <router-link to="/videos">
                     <li @click='close()'>Videos</li>
                 </router-link>
+                <router-link to="/reels">
+                    <li @click='close()'>Reels</li>
+                </router-link>
             </ul>
         </div>
     </nav>
