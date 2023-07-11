@@ -30,11 +30,13 @@ const message = ref('')
 const submitForm = () => {
     const formData = new FormData();
 
+    const url = 'https://formspree.io/f/xgejepyk';
+
     formData.append('name', name.value);
     formData.append('email', email.value);
     formData.append('message', message.value);
 
-    fetch('https://formspree.io/f/xgejepyk', {
+    fetch(url, {
         method: 'POST',
         body: formData
     })

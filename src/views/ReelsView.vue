@@ -9,7 +9,7 @@
 <style scoped>
 #reels {
     margin: 1rem 2rem;
-    
+
 
 
 }
