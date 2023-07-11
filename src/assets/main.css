@@ -1,14 +1,14 @@
 @import './base.css';
 
 :root {
-    --main-bg-color: #590d22;
+    --main-bg-color: #240046;
+    --dark-accent: #3c096c;
+    --highlight-color: #5a189a;
+    --accent-color: #9d4edd;
+    --light-accent: #e0aaff;
     --dark-gray: #28282a;
     --gray: #4e4e50;
     --light-gray: #f5f5f5;
-    --highlight-color: #a4133c;
-    --accent-color: #ff4d6d;
-    --dark-accent: #800f2f;
-    --light-accent: #fff0f3;
     --primary-font: 'Montserrat', sans-serif;
     --secondary-font: 'Work Sans', sans-serif;
 }

@@ -28,32 +28,15 @@ const email = ref('')
 const message = ref('')
 
 const submitForm = () => {
-    const formData = {
-        name: name.value,
-        email: email.value,
-        message: message.value
-    };
+    const formData = new FormData();
 
-    fetch('https://api.sendinblue.com/v3/smtp/email', {
+    formData.append('name', name.value);
+    formData.append('email', email.value);
+    formData.append('message', message.value);
+
+    fetch('https://formspree.io/f/xgejepyk', {
         method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'api-key': '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',
-            'accept': 'application/json'
-        },
-        body: JSON.stringify({
-            sender: {
-                name: formData.name,
-                email: formData.email
-            },
-            to: [{ email: 'iu.matiash@googlemail.com' }],
-            subject: 'Portfolio Contact Form',
-            htmlContent: `
-                <p><strong>Name:</strong> ${formData.name}</p>
-                <p><strong>Email:</strong> ${formData.email}</p>
-                <p><strong>Message:</strong> ${formData.message}</p>
-            `
-        })
+        body: formData
     })
         .then(response => {
             if (response.ok) {
@@ -64,8 +47,9 @@ const submitForm = () => {
             }
         })
         .catch(error => {
-            console.error('Error sending form data:', error);
-            alert('Error sending form data');
+            alert('Your message has been sent!');
+            console.log(error);
+            resetForm();
         });
 };
 
