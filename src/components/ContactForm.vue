@@ -1,10 +1,8 @@
 <template>
     <div class="contact-form">
         <div class="social-media">
-            <a target="_blank" href="https://www.facebook.com/julesmatiasart"><img src="../assets/icons/fb_icon.svg"
-                    class="icon" alt="Facebook icon" /></a>
-            <a target="_blank" href="https://www.instagram.com/jules_matias/?hl=en"><img
-                    src="../assets/icons/insta_icon.svg" class="icon" alt="Instagram icon" /></a>
+            <a target="_blank" :href="link_fb"><img :src="icon_fb" class="icon" alt="Facebook icon" /></a>
+            <a target="_blank" :href="link_insta"><img :src="icon_insta" class="icon" alt="Instagram icon" /></a>
         </div>
         <div class="form-container">
             <form @submit.prevent="submitForm">
@@ -22,6 +20,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+
+import icon_fb from '../assets/icons/fb_icon.svg'
+import icon_insta from '../assets/icons/insta_icon.svg'
+
+const link_fb = 'https://www.facebook.com/julesmatiasart'
+const link_insta = 'https://www.instagram.com/jules_matias/?hl=en'
 
 const name = ref('')
 const email = ref('')

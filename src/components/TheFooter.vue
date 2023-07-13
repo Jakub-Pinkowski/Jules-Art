@@ -6,12 +6,10 @@
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                <li class="ms-3"><a class="text-body-secondary" href="https://github.com/Jakub-Pinkowski"><svg class="bi"
-                            width="24" height="24">
+                <li class="ms-3"><a class="text-body-secondary" :href="link_github"><svg class="bi" width="24" height="24">
                             <use xlink:href="#github" />
                         </svg></a></li>
-                <li class="ms-3"><a class="text-body-secondary"
-                        href="https://www.linkedin.com/in/jakub-pinkowski-b44405134/"><svg class="bi" width="24"
+                <li class="ms-3"><a class="text-body-secondary" :href="link_linkedin"><svg class="bi" width="24"
                             height="24">
                             <use xlink:href="#linkedin" />
                         </svg></a></li>
@@ -30,6 +28,12 @@
         </footer>
     </div>
 </template>
+
+<script setup lang="ts">
+const link_github = 'https://github.com/Jakub-Pinkowski'
+const link_linkedin = 'https://www.linkedin.com/in/jakub-pinkowski-b44405134/'
+
+</script>
 
 <style scoped>
 .bi {
