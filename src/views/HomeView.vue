@@ -74,5 +74,10 @@ const views = viewStore.views;
         width: 80%;
         height: auto;
     }
+
+    img:hover {
+        filter: brightness(80%) !important;
+        transform: scale(1) !important;
+    }
 }
 </style>@/stores/wiews
