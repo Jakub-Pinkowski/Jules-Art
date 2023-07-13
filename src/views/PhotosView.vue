@@ -155,8 +155,8 @@ const closeModal = () => {
 
 @media screen and (max-width: 768px) {
     img:hover {
-        opacity: 1;
-        transform: scale(1);
+        opacity: 1 !important;
+        transform: scale(1) !important;
     }
 }
 </style>

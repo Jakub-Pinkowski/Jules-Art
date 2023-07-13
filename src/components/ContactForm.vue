@@ -119,9 +119,15 @@ form {
 
 @media screen and (max-width: 768px) {
 
-    input,
+    .input-container {
+        width: 100% !important;
+        align-items: center;
+        justify-content: center;
+    }
+
     textarea {
         width: 100% !important;
     }
+
 }
 </style>

@@ -59,7 +59,7 @@ export default {
 }
 
 #menuToggle a:hover {
-    color: tomato;
+    color: var(--highlight-color)
 }
 
 
