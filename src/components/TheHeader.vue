@@ -45,6 +45,6 @@
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
+    color: var(--highlight-color);
 }
 </style>

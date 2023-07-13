@@ -36,12 +36,6 @@
 #home {
     margin: 1rem 2rem;
 
-
-
-    a:hover {
-        background-color: var(--light-accent);
-    }
-
     #choice_container {
         display: flex;
 
@@ -58,13 +52,17 @@
                 width: 100%;
                 height: auto;
                 border-radius: 5%;
-                transition: all 0.2s ease-in-out;
+                filter: brightness(80%);
+                transition: all 0.3s ease-in-out;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
             }
 
             img:hover {
-                opacity: 0.9;
-                scale: 1.05;
+                filter: brightness(100%);
+                transform: scale(1.05);
                 cursor: pointer;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.30), 0 6px 20px rgba(0, 0, 0, 0.22);
             }
         }
     }
@@ -82,6 +80,5 @@
         width: 80% !important;
         height: auto;
     }
-
 }
 </style>

@@ -75,7 +75,7 @@ const closeModal = () => {
 
         img:hover {
             opacity: 0.95;
-            transform: scale(1.1);
+            transform: scale(1.05);
             cursor: pointer;
         }
     }

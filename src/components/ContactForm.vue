@@ -8,7 +8,7 @@
         </div>
         <div class="form-container">
             <form @submit.prevent="submitForm">
-                <div>
+                <div class="input-container">
                     <input type="text" name="name" id="name" placeholder="Name" required v-model="name">
                     <input type="email" name="email" id="email" placeholder="E-mail" required v-model="email">
                 </div>
@@ -78,19 +78,28 @@ form {
     display: flex;
     flex-direction: column;
 
-    input,
+    .input-container {
+        width: 70%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    input {
+        width: 48%;
+    }
+
     textarea {
         width: 70%;
+    }
+
+    input,
+    textarea {
         margin: 1rem 0;
         padding: 0.5em;
         border: 1px solid var(--dark-accent);
         border-radius: 5px;
     }
 
-    input {
-        width: 34%;
-        margin-right: 1rem;
-    }
 
     button {
         margin: 1rem 0;
@@ -103,6 +112,8 @@ form {
         background-color: var(--light-accent);
         color: var(--dark-accent);
     }
+
+    
 }
 
 @media screen and (max-width: 768px) {
