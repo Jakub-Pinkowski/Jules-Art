@@ -9,9 +9,6 @@
                 <router-link to="/home">
                     <li @click='close()'>Home</li>
                 </router-link>
-                <router-link to="/about">
-                    <li @click='close()'>About</li>
-                </router-link>
                 <router-link to="/photos">
                     <li @click='close()'>Photos</li>
                 </router-link>
@@ -20,6 +17,9 @@
                 </router-link>
                 <router-link to="/reels">
                     <li @click='close()'>Reels</li>
+                </router-link>
+                <router-link to="/about">
+                    <li @click='close()'>About</li>
                 </router-link>
             </ul>
         </div>
