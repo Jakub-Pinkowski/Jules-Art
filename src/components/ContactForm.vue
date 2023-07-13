@@ -14,7 +14,7 @@
                 </div>
                 <textarea name="message" id="message" cols="20" rows="5" placeholder="Message" required
                     v-model="message"></textarea>
-                <button class="btn btn-sm btn-outline-secondary" type="submit">Submit</button>
+                <button class="btn btn-sm" type="submit">Submit</button>
             </form>
         </div>
     </div>
@@ -106,14 +106,15 @@ form {
         width: 90px;
         border: 1px solid var(--dark-accent);
         color: var(--main-bg-color);
+        transition: background-color 0.5s ease;
     }
 
     button:hover {
+        border: 1px solid var(--dark-accent);
         background-color: var(--light-accent);
-        color: var(--dark-accent);
     }
 
-    
+
 }
 
 @media screen and (max-width: 768px) {
