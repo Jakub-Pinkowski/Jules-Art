@@ -71,16 +71,12 @@ const close = () => {
     cursor: pointer;
 
     opacity: 0;
-    /* hide this */
     z-index: 2;
-    /* and place it over the hamburger */
 
     -webkit-touch-callout: none;
 }
 
-/*
-     * Just a quick hamburger
-     */
+
 #menuToggle span {
     display: block;
     width: 33px;
@@ -108,41 +104,31 @@ const close = () => {
     transform-origin: 0% 100%;
 }
 
-/*
-     * Transform all the slices of hamburger
-     * into a crossmark.
-     */
+
 #menuToggle input:checked~span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
     background: #232323;
 }
 
-/*
-     * But let's hide the middle one.
-     */
+
 #menuToggle input:checked~span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-/*
-     * Ohyeah and the last one should go the other direction
-     */
+
 #menuToggle input:checked~span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, -1px);
 }
 
-/*
-     * Make this absolute positioned
-     * at the top left of the screen
-     */
+
 #menu {
     position: fixed;
     right: 0;
-    /* CHANGED */
+
     top: 0;
-    /* CHANGED */
+
     width: 300px;
     padding: 50px;
     padding-top: 125px;
@@ -152,9 +138,7 @@ const close = () => {
     -webkit-font-smoothing: antialiased;
 
     transform: translateX(100%);
-    /* CHANGED */
     transform-origin: top right;
-    /* CHANGED */
 
     transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
@@ -164,11 +148,8 @@ const close = () => {
     font-size: 22px;
 }
 
-/*
-     * And let's slide it in from the left
-     */
 #menuToggle input:checked~ul {
     transform: translateX(0);
-    /* CHANGED */
+
 }
 </style>
