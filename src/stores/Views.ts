@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 
 import view_about from '@/assets/images/view_about.png';
-import view_photos from '@/assets/images/4.jpg';
+import view_photos from '@/assets/images/3.jpg';
 import view_videos from '@/assets/images/view_videos.jpg';
 import view_reels from '@/assets/images/2.jpg';
 

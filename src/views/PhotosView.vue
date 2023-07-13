@@ -7,24 +7,16 @@
         <!-- Gallery -->
         <div class="row gallery">
             <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                <img :src="image1" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image1)" />
-                <img :src="image2" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image2)" />
+                <img v-for="image in row1" :src="image.src" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
+                    @click="openModal(image.src)" />
             </div>
             <div class="col-lg-4 mb-4 mb-lg-0">
-                <img :src="image4" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image4)" />
-                <img :src="image3" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image3)" />
-                <img :src="image5" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image5)" />
+                <img v-for="image in row2" :src="image.src" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
+                    @click="openModal(image.src)" />
             </div>
             <div class="col-lg-4 mb-4 mb-lg-0">
-                <img :src="image7" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image7)" />
-                <img :src="image6" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image6)" />
+                <img v-for="image in row3" :src="image.src" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
+                    @click="openModal(image.src)" />
             </div>
         </div>
 
@@ -42,13 +34,33 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import image1 from '@/assets/images/1.jpg';
-import image2 from '@/assets/images/2.jpg';
-import image3 from '@/assets/images/3.jpg';
-import image4 from '@/assets/images/4.jpg';
-import image5 from '@/assets/images/5.jpg';
-import image6 from '@/assets/images/6.jpg';
-import image7 from '@/assets/images/7.jpg';
+import { useImageStore } from '@/stores/images';
+
+const imageStore = useImageStore();
+const images = imageStore.images;
+
+interface ImageObject {
+    name: string;
+    src: string;
+    row: number;
+}
+
+let row1: Array<ImageObject> = []
+let row2: Array<ImageObject> = []
+let row3: Array<ImageObject> = []
+
+let i = 0
+for (i = 0; i < images.length; i++) {
+    if (i < 2) {
+        row1.push(images[i])
+    } else if (i < 5) {
+        row2.push(images[i])
+    } else {
+        row3.push(images[i])
+    }
+}
+
+console.log(row1)
 
 let modalOpen = ref(false);
 let modalImage = ref('');
