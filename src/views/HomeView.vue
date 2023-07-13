@@ -4,7 +4,7 @@
             <h1>Jules-Art</h1>
         </div>
         <div id="choice_container">
-            <div class="choice" v-for="view in views">
+            <div class="choice" v-for="view in views" :key="view.name">
                 <h3> {{ view.description }}</h3>
                 <router-link :to="view.route">
                     <img :src="view.image" alt="about">

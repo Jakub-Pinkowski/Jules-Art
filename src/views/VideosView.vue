@@ -4,7 +4,7 @@
             <h1>Videos</h1>
         </div>
         <div class="video_container">
-            <div class="video" v-for="video in videos">
+            <div class="video" v-for="video in videos" :key="video.name">
                 <video :src="video.src" :poster="video.poster" class="w-100 shadow-1-strong rounded mb-4" controls></video>
                 <h3>{{ video.name }}</h3>
             </div>

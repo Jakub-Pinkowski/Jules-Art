@@ -7,16 +7,16 @@
         <!-- Gallery -->
         <div class="row gallery">
             <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                <img v-for="image in row1" :src="image.src" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image.src)" />
+                <img v-for="image in row1" :key="image.name" :src="image.src" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Gallery Photo" @click="openModal(image.src)" />
             </div>
             <div class="col-lg-4 mb-4 mb-lg-0">
-                <img v-for="image in row2" :src="image.src" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image.src)" />
+                <img v-for="image in row2" :key="image.name" :src="image.src" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Gallery Photo" @click="openModal(image.src)" />
             </div>
             <div class="col-lg-4 mb-4 mb-lg-0">
-                <img v-for="image in row3" :src="image.src" class="w-100 shadow-1-strong rounded mb-4" alt="Gallery Photo"
-                    @click="openModal(image.src)" />
+                <img v-for="image in row3" :key="image.name" :src="image.src" class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Gallery Photo" @click="openModal(image.src)" />
             </div>
         </div>
 

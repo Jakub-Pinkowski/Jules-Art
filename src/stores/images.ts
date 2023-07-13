@@ -15,37 +15,37 @@ export const useImageStore = defineStore({
             {
                 name: 'image1',
                 src: image1,
-                row: 1
+                row: 1,
             },
             {
                 name: 'image2',
                 src: image2,
-                row: 1
+                row: 1,
             },
             {
                 name: 'image3',
                 src: image3,
-                row: 2
+                row: 2,
             },
             {
                 name: 'image4',
                 src: image4,
-                row: 2
+                row: 2,
             },
             {
                 name: 'image5',
                 src: image5,
-                row: 2
+                row: 2,
             },
             {
                 name: 'image6',
                 src: image6,
-                row: 3
+                row: 3,
             },
             {
                 name: 'image7',
                 src: image7,
-                row: 3
+                row: 3,
             },
         ],
     }),
