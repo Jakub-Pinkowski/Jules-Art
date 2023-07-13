@@ -16,7 +16,7 @@
                 <div v-for="(reel, index) in reels" :key="reel.name" class="carousel-item"
                     :class="{ active: index === activeIndex }">
                     <video class="img-fluid" autoplay loop muted>
-                        <source src="@/assets/reels/reel_1.mov" type="video/mp4" />
+                        <source :src="reel.src" type="video/mp4" />
                     </video>
                     <div class="carousel-caption d-none d-md-block">
                         <h5>{{ reel.name }}</h5>
@@ -44,8 +44,6 @@ import { useReelsStore } from '@/stores/reels';
 const reelsStore = useReelsStore();
 const reels = reelsStore.reels;
 
-console.log(reels[0].src)
-
 const activeIndex = ref(0);
 
 // Carousel finctionality
@@ -65,6 +63,27 @@ const prevSlide = () => {
 <style scoped lang="scss">
 #reels {
     margin: 1rem 2rem;
+
+    .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .carousel-indicators button {
+        width: 35px;
+        height: 4px;
+        background-color: var(--light-gray);
+        border: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+    }
+
+    .carousel-indicators button.active {
+        background-color: var(--dark-gray);
+    }
 
     .carousel-item {
         display: flex;
