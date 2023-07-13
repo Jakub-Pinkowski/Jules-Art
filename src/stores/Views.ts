@@ -10,25 +10,25 @@ export const useViewStore = defineStore({
     state: () => ({
         views: [
             {
-                name: 'photos',
+                name: 'Photos',
                 route: '/photos',
                 image: view_photos,
                 description: 'Checkout my photos',
             },
             {
-                name: 'videos',
+                name: 'Videos',
                 route: '/videos',
                 image: view_videos,
                 description: 'Checkout my videos',
             },
             {
-                name: 'reels',
+                name: 'Reels',
                 route: '/reels',
                 image: view_reels,
                 description: 'Checkout my reels',
             },
             {
-                name: 'about',
+                name: 'About',
                 route: '/about',
                 image: view_about,
                 description: 'Read more about me',

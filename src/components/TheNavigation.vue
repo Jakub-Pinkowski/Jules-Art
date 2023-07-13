@@ -9,17 +9,8 @@
                 <router-link to="/home">
                     <li @click='close()'>Home</li>
                 </router-link>
-                <router-link to="/photos">
-                    <li @click='close()'>Photos</li>
-                </router-link>
-                <router-link to="/videos">
-                    <li @click='close()'>Videos</li>
-                </router-link>
-                <router-link to="/reels">
-                    <li @click='close()'>Reels</li>
-                </router-link>
-                <router-link to="/about">
-                    <li @click='close()'>About</li>
+                <router-link v-for="view in views" :to="view.route">
+                    <li @click='close()'>{{ view.name }}</li>
                 </router-link>
             </ul>
         </div>
@@ -27,15 +18,21 @@
 </template>
 
     
-<script lang="ts">
-export default {
-    methods: {
-        close() {
-            let b = this.$refs.checkbox as HTMLInputElement;
-            b.checked = false;
-        }
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useViewStore } from '@/stores/views';
+
+const viewStore = useViewStore();
+const views = viewStore.views;
+
+
+const checkbox = ref<HTMLInputElement | null>(null);
+
+const close = () => {
+    if (checkbox.value) {
+        checkbox.value.checked = false;
     }
-}
+};
 </script>
     
 <style scoped >
