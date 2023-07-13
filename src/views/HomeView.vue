@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { useViewStore } from '@/stores/Views';
+import { useViewStore } from '@/stores/views';
 
 const viewStore = useViewStore();
 const views = viewStore.views;
@@ -74,4 +74,4 @@ const views = viewStore.views;
         height: auto;
     }
 }
-</style>
+</style>@/stores/wiews

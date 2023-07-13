@@ -4,20 +4,19 @@
             <h1>Videos</h1>
         </div>
         <div class="video_container">
-            <div class="video">
-                <video src="../assets/videos/Berlin_Romance.mov" poster="../assets/images/video_1.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4" controls></video>
-            </div>
-            <div class="video">
-                <video src="../assets/videos/Berlin_Romance_part_2.mov" poster="../assets//images/video_2.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4" controls></video>
+            <div class="video" v-for="video in videos">
+                <video :src="video.src" :poster="video.poster" class="w-100 shadow-1-strong rounded mb-4" controls></video>
+                <h3>{{ video.name }}</h3>
             </div>
         </div>
     </section>
 </template>
 
 <script setup lang="ts">
+import { useVideoStore } from '@/stores/videos';
 
+const videoStore = useVideoStore();
+const videos = videoStore.videos;
 </script>
 
 <style scoped lang="scss">
@@ -34,10 +33,17 @@
         height: 100%;
 
         .video {
-            width: 80%;
+            width: 75%;
             height: 100%;
             margin: 2rem;
+
+            h3 {
+                display: block;
+                text-align: center;
+            }
         }
+
+
 
     }
 
