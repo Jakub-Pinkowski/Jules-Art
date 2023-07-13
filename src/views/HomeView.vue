@@ -4,32 +4,50 @@
             <h1>Jules-Art</h1>
         </div>
         <div id="choice_container">
-            <div class="choice">
-                <h3>Read more about me</h3>
-                <router-link to="/about">
-                    <img src="../assets/images/about_cropped.png" alt="about_me">
+            <div class="choice" v-for="view in views">
+                <h3> {{ view.description }}</h3>
+                <router-link :to="view.route">
+                    <img :src="view.image" alt="about">
                 </router-link>
-
-            </div>
-            <div class="choice">
-                <h3>Checkout my photos</h3>
-                <router-link to="/photos">
-                    <img src="../assets/images/4.jpg" alt="photos">
-                </router-link>
-
-            </div>
-            <div class="choice">
-                <h3>Checkout my videos</h3>
-                <router-link to="/videos">
-                    <img src="../assets/images/video_1_cropped.jpg" alt="videos">
-                </router-link>
-
             </div>
         </div>
     </section>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
+import view_about from '@/assets/images/view_about.png';
+import view_photos from '@/assets/images/4.jpg';
+import view_videos from '@/assets/images/view_videos.jpg';
+import view_reels from '@/assets/images/2.jpg';
+
+const views = [
+    {
+        name: 'about',
+        route: '/about',
+        image: view_about,
+        description: 'Read more about me',
+    },
+    {
+        name: 'photos',
+        route: '/photos',
+        image: view_photos,
+        description: 'Checkout my photos',
+    },
+    {
+        name: 'videos',
+        route: '/videos',
+        image: view_videos,
+        description: 'Checkout my videos',
+    },
+    {
+        name: 'reels',
+        route: '/reels',
+        image: view_reels,
+        description: 'Checkout my reels',
+    },
+];
+
 </script>
 
 <style scoped lang="scss">
