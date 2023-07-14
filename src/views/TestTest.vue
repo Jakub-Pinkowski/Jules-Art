@@ -5,44 +5,55 @@
         </div>
         <!-- Slider main container -->
         <swiper
-            :effect="'coverflow'"
-            :grabCursor="true"
+            :slidesPerView="1"
             :centeredSlides="true"
-            :slidesPerView="3"
-            :coverflowEffect="{
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
+            :spaceBetween="10"
+            :pagination="{
+                clickable: true,
             }"
-            :pagination="true"
             :navigation="{
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
             }"
+            :breakpoints="{
+                '768': {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                },
+                '1024': {
+                    slidesPerView: 3,
+                    spaceBetween: 120,
+                },
+            }"
             :modules="modules"
             class="mySwiper"
         >
-            <swiper-slide
-                ><img
-                    src="https://swiperjs.com/demos/images/nature-1.jpg" /></swiper-slide
-            ><swiper-slide
-                ><img
-                    src="https://swiperjs.com/demos/images/nature-2.jpg" /></swiper-slide
-            ><swiper-slide
-                ><video
-                    src="@/assets/reels/reel_1.mov"
-                    type="video/mp4"
-                    controls
-                ></video> </swiper-slide
-            ><swiper-slide
-                ><img src="https://swiperjs.com/demos/images/nature-6.jpg"
-            /></swiper-slide>
+            <swiper-slide>
+                <video src="@/assets/reels/reel_1.mov" controls></video>
+            </swiper-slide>
+            <swiper-slide>
+                <video src="@/assets/reels/reel_1.mov" controls></video>
+            </swiper-slide>
+            <swiper-slide>
+                <video src="@/assets/reels/reel_1.mov" controls></video>
+            </swiper-slide>
+            <swiper-slide>
+                <video src="@/assets/reels/reel_1.mov" controls></video>
+            </swiper-slide>
+            <swiper-slide>
+                <video src="@/assets/reels/reel_1.mov" controls></video>
+            </swiper-slide>
+            <swiper-slide>
+                <video src="@/assets/reels/reel_1.mov" controls></video>
+            </swiper-slide>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
         </swiper>
     </section>
 </template>
 
 <script>
+import { ref, onMounted } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import 'swiper/css';
@@ -50,7 +61,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 
 export default {
     components: {
@@ -58,8 +69,14 @@ export default {
         SwiperSlide,
     },
     setup() {
+        const modules = ref([Pagination, Navigation]);
+
+        onMounted(() => {
+            modules.value = [Pagination, Navigation];
+        });
+
         return {
-            modules: [EffectCoverflow, Pagination, Navigation],
+            modules,
         };
     },
 };
@@ -71,12 +88,13 @@ export default {
 
     .swiper {
         width: 100%;
+        height: 100%;
     }
 
     .swiper-slide {
         background-position: center;
         background-size: cover;
-        width: 300px;
+        width: 400px;
         height: auto; /* Set height to auto */
     }
 
@@ -87,11 +105,8 @@ export default {
         height: auto; /* Set height to auto for videos and images */
     }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-        color: black;
-        width: 50px;
-        height: 50px;
+    .swiper-slide video.inactive {
+        filter: grayscale(100%) blur(2px); /* Gray and blurred */
     }
 }
 </style>
