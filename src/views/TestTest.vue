@@ -7,6 +7,7 @@
         <swiper
             ref="mySwiper"
             @slideChange="onSlideChange"
+            @transitionEnd="removeControls"
             :slidesPerView="1"
             :centeredSlides="true"
             :spaceBetween="10"
@@ -55,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import 'swiper/css';
@@ -64,16 +66,34 @@ import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from 'swiper/modules';
 
-
 const modules = [Pagination, Navigation];
 
+// Apply inactive classes to videos
 const onSlideChange = (swiper: any) => {
-    console.log(swiper.activeIndex);
     const videos = document.querySelectorAll('video');
     videos.forEach((video) => {
         video.classList.add('inactive');
     });
     videos[swiper.activeIndex].classList.remove('inactive');
+};
+
+// Apply inactive classes to all the videos except the first one when page loads
+onMounted(() => {
+    const videos = document.querySelectorAll('video');
+    videos.forEach((video) => {
+        video.classList.add('inactive');
+    });
+    videos[0].classList.remove('inactive');
+});
+
+// remove controls from all the videos with class inactive
+const removeControls = () => {
+    const videos = document.querySelectorAll('video');
+    videos.forEach((video) => {
+        if (video.classList.contains('inactive')) {
+            video.removeAttribute('controls');
+        }
+    });
 };
 </script>
 
@@ -90,18 +110,18 @@ const onSlideChange = (swiper: any) => {
         background-position: center;
         background-size: cover;
         width: 400px;
-        height: auto; /* Set height to auto */
+        height: auto;
     }
 
     .swiper-slide img,
     .swiper-slide video {
         display: block;
         width: 100%;
-        height: auto; /* Set height to auto for videos and images */
+        height: auto; 
     }
 
     .swiper-slide video.inactive {
-        filter: grayscale(100%) blur(2px); /* Gray and blurred */
+        filter: grayscale(100%) blur(2px); 
     }
 }
 </style>
