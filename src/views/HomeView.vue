@@ -86,4 +86,3 @@ const views = viewStore.views;
     }
 }
 </style>
-@/stores/wiews

@@ -16,11 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import TheHead from '@/components/TheHead.vue'
-import TheHeader from '@/components/TheHeader.vue'
-import TheFooter from '@/components/TheFooter.vue'
-import TheNavigation from '@/components/TheNavigation.vue'
-
+import TheHead from '@/components/TheHead.vue';
+import TheHeader from '@/components/TheHeader.vue';
+import TheFooter from '@/components/TheFooter.vue';
+import TheNavigation from '@/components/TheNavigation.vue';
 </script>
 
 <style lang="scss">
@@ -44,7 +43,6 @@ import TheNavigation from '@/components/TheNavigation.vue'
     h1 {
         margin-top: 3rem;
     }
-
 }
 
 body {
@@ -85,11 +83,11 @@ p {
 /* Transition classes */
 
 .slide-blur-enter-active {
-    transition: all .3s ease;
+    transition: all 0.3s ease;
 }
 
 .slide-blur-leave-active {
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .slide-blur-enter {
