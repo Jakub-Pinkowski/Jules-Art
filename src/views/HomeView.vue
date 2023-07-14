@@ -4,10 +4,14 @@
             <h1>Jules-Art</h1>
         </div>
         <div id="choice_container">
-            <div class="choice" v-for="(view, index) in views.slice(0, views.length - 1)" :key="view.name">
-                <h3> {{ view.description }}</h3>
+            <div
+                class="choice"
+                v-for="(view, index) in views.slice(0, views.length - 1)"
+                :key="view.name"
+            >
+                <h3>{{ view.description }}</h3>
                 <router-link :to="view.route">
-                    <img :src="view.image" :alt="view.name">
+                    <img :src="view.image" :alt="view.name" />
                 </router-link>
             </div>
         </div>
@@ -47,15 +51,16 @@ const views = viewStore.views;
                 border-radius: 5%;
                 filter: brightness(80%);
                 transition: all 0.3s ease-in-out;
-                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+                    0 3px 6px rgba(0, 0, 0, 0.23);
             }
 
             img:hover {
                 filter: brightness(100%);
                 transform: scale(1.05);
                 cursor: pointer;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.30), 0 6px 20px rgba(0, 0, 0, 0.22);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3),
+                    0 6px 20px rgba(0, 0, 0, 0.22);
             }
         }
     }
@@ -80,4 +85,5 @@ const views = viewStore.views;
         transform: scale(1) !important;
     }
 }
-</style>@/stores/wiews
+</style>
+@/stores/wiews
