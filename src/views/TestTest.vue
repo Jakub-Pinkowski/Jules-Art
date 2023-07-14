@@ -7,7 +7,6 @@
         <swiper
             ref="mySwiper"
             @slideChange="onSlideChange"
-            @transitionEnd="removeControls"
             :slidesPerView="1"
             :centeredSlides="true"
             :spaceBetween="10"
@@ -70,31 +69,31 @@ const modules = [Pagination, Navigation];
 
 // Apply inactive classes to videos
 const onSlideChange = (swiper: any) => {
-    const videos = document.querySelectorAll('video');
-    videos.forEach((video) => {
-        video.classList.add('inactive');
-    });
-    videos[swiper.activeIndex].classList.remove('inactive');
-};
-
-// Apply inactive classes to all the videos except the first one when page loads
-onMounted(() => {
-    const videos = document.querySelectorAll('video');
-    videos.forEach((video) => {
-        video.classList.add('inactive');
-    });
-    videos[0].classList.remove('inactive');
-});
-
-// remove controls from all the videos with class inactive
-const removeControls = () => {
-    const videos = document.querySelectorAll('video');
-    videos.forEach((video) => {
-        if (video.classList.contains('inactive')) {
+    const videos = Array.from(document.querySelectorAll('video'));
+    videos.forEach((video, index) => {
+        if (index === swiper.activeIndex) {
+            video.classList.remove('inactive');
+            video.setAttribute('controls', '');
+        } else {
+            video.classList.add('inactive');
             video.removeAttribute('controls');
         }
     });
 };
+
+// Apply inactive classes to all the videos except the first one when page loads
+onMounted(() => {
+    const videos = Array.from(document.querySelectorAll('video'));
+    videos.forEach((video, index) => {
+        if (index === 0) {
+            video.classList.remove('inactive');
+            video.setAttribute('controls', '');
+        } else {
+            video.classList.add('inactive');
+            video.removeAttribute('controls');
+        }
+    });
+});
 </script>
 
 <style scoped lang="scss">
@@ -117,11 +116,11 @@ const removeControls = () => {
     .swiper-slide video {
         display: block;
         width: 100%;
-        height: auto; 
+        height: auto;
     }
 
     .swiper-slide video.inactive {
-        filter: grayscale(100%) blur(2px); 
+        filter: grayscale(100%) blur(2px);
     }
 }
 </style>
