@@ -6,10 +6,11 @@
         <!-- Slider main container -->
         <swiper
             ref="mySwiper"
-            @slideChange="onSlideChange"
+            @slideChangeTransitionEnd="onSlideChangeTransitionEnd"
             :slidesPerView="1"
             :centeredSlides="true"
             :spaceBetween="10"
+            :slideToClickedSlide="true"
             :pagination="{
                 clickable: true,
             }"
@@ -57,18 +58,17 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Pagination, Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Pagination, Navigation } from 'swiper/modules';
-
 const modules = [Pagination, Navigation];
 
 // Apply inactive classes to videos
-const onSlideChange = (swiper: any) => {
+const onSlideChangeTransitionEnd = (swiper: any) => {
     const videos = Array.from(document.querySelectorAll('video'));
     videos.forEach((video, index) => {
         if (index === swiper.activeIndex) {
@@ -118,7 +118,6 @@ onMounted(() => {
         width: 100%;
         height: auto;
     }
-
     .swiper-slide video.inactive {
         filter: grayscale(100%) blur(2px);
     }
