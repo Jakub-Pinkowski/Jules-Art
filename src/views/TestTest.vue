@@ -5,6 +5,8 @@
         </div>
         <!-- Slider main container -->
         <swiper
+            ref="mySwiper"
+            @slideChange="onSlideChange"
             :slidesPerView="1"
             :centeredSlides="true"
             :spaceBetween="10"
@@ -52,8 +54,7 @@
     </section>
 </template>
 
-<script>
-import { ref, onMounted } from 'vue';
+<script setup lang="ts">
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 import 'swiper/css';
@@ -63,22 +64,16 @@ import 'swiper/css/navigation';
 
 import { Pagination, Navigation } from 'swiper/modules';
 
-export default {
-    components: {
-        Swiper,
-        SwiperSlide,
-    },
-    setup() {
-        const modules = ref([Pagination, Navigation]);
 
-        onMounted(() => {
-            modules.value = [Pagination, Navigation];
-        });
+const modules = [Pagination, Navigation];
 
-        return {
-            modules,
-        };
-    },
+const onSlideChange = (swiper: any) => {
+    console.log(swiper.activeIndex);
+    const videos = document.querySelectorAll('video');
+    videos.forEach((video) => {
+        video.classList.add('inactive');
+    });
+    videos[swiper.activeIndex].classList.remove('inactive');
 };
 </script>
 
