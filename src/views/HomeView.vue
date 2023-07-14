@@ -4,7 +4,7 @@
             <h1>Jules-Art</h1>
         </div>
         <div id="choice_container">
-            <div class="choice" v-for="view in views" :key="view.name">
+            <div class="choice" v-for="(view, index) in views.slice(0, views.length - 1)" :key="view.name">
                 <h3> {{ view.description }}</h3>
                 <router-link :to="view.route">
                     <img :src="view.image" :alt="view.name">
@@ -33,9 +33,9 @@ const views = viewStore.views;
         align-items: space-between;
 
         .choice {
-            flex: 0 0 calc(45% - 4rem);
+            flex: 0 0 calc(33% - 4rem);
             height: 100%;
-            margin: 1rem 2rem;
+            margin: 2rem 2rem;
             display: flex;
             flex-direction: column;
             justify-content: center;

@@ -42,7 +42,7 @@ const close = () => {
     top: 50px;
     right: 50px;
 
-    z-index: 1;
+    z-index: 10000;
 
     -webkit-user-select: none;
     user-select: none;
@@ -71,7 +71,7 @@ const close = () => {
     cursor: pointer;
 
     opacity: 0;
-    z-index: 2;
+    z-index: 20000;
 
     -webkit-touch-callout: none;
 }
@@ -87,7 +87,7 @@ const close = () => {
     background: var(--highlight-color);
     border-radius: 3px;
 
-    z-index: 1;
+    z-index: 10000;
 
     transform-origin: 4px 0px;
 
