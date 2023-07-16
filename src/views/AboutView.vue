@@ -5,18 +5,19 @@
         </div>
         <div class="about_description">
             <section class="photo">
-                <img src="../assets/images/about.jpg" alt="artist-photo" />
+                <img :src="about_photo" alt="artist-photo" />
             </section>
             <section class="text">
                 <section>
                     <h3>Artistic soul. Berlin.</h3>
                     <p>
-                        Photography is my passion and I would like to share my best
-                        work here. I am interested in traveling, aesthetics, and
-                        fashion photography. Recently, I've started diving into
-                        videography and I hope to share my first work soon. I will
-                        be happy to work on interesting projects and welcome all
-                        creative souls to reach out to me via social platforms or the form below.
+                        Photography is my passion and I would like to share my
+                        best work here. I am interested in traveling,
+                        aesthetics, and fashion photography. Recently, I've
+                        started diving into videography and I hope to share my
+                        first work soon. I will be happy to work on interesting
+                        projects and welcome all creative souls to reach out to
+                        me via social platforms or the form below.
                     </p>
                 </section>
                 <ContactForm />
@@ -26,12 +27,12 @@
 </template>
 
 <script setup lang="ts">
-import ContactForm from '../components/ContactForm.vue'
+import about_photo from '@/assets/images/about.jpg';
+import ContactForm from '../components/ContactForm.vue';
 </script>
 
 <style scoped lang="scss">
 #about {
-
     margin: 1rem 2rem;
 
     .about_description {
@@ -56,13 +57,13 @@ import ContactForm from '../components/ContactForm.vue'
     }
 
     .text {
+        margin-right: 10rem;
         flex-direction: column;
         justify-content: left;
         display: flex;
-        width: 60%;
+        width: 50%;
         text-align: justify;
         text-justify: inter-word;
-
     }
 
     @media screen and (max-width: 768px) {
@@ -78,7 +79,6 @@ import ContactForm from '../components/ContactForm.vue'
         .text {
             width: 100%;
         }
-
     }
 }
 </style>
