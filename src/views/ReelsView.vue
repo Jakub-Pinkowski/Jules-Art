@@ -139,6 +139,7 @@ const onSlideChangeTransitionEnd = (swiper: any) => {
             video.classList.add('inactive');
             video.removeAttribute('controls');
             video.pause();
+            video.removeAttribute('autoplay');
         }
     });
 };
