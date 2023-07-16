@@ -1,9 +1,7 @@
 <template>
     <section id="home">
-        <div class="description">
-            <h1>Jules-Art</h1>
-        </div>
-        <div id="choice_container">
+        <ViewDescription>Jules-Art</ViewDescription>
+        <div id="choice-container">
             <div
                 class="choice"
                 v-for="(view, index) in views.slice(0, views.length - 1)"
@@ -29,7 +27,7 @@ const views = viewStore.views;
 #home {
     margin: 1rem 2rem;
 
-    #choice_container {
+    #choice-container {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;
@@ -67,7 +65,7 @@ const views = viewStore.views;
 }
 
 @media screen and (max-width: 768px) {
-    #choice_container {
+    #choice-container {
         flex-direction: column !important;
         justify-content: center;
         align-items: center;

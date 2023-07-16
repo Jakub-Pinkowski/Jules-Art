@@ -1,8 +1,6 @@
 <template>
     <section id="reels">
-        <div class="description">
-            <h1>Reels</h1>
-        </div>
+        <ViewDescription>Reels</ViewDescription>
 
         <!-- Desktop -->
         <div class="desktop">

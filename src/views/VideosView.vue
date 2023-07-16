@@ -1,8 +1,6 @@
 <template>
     <section id="videos">
-        <div class="description">
-            <h1>Videos</h1>
-        </div>
+        <ViewDescription>Videos</ViewDescription>
         <div class="video_container">
             <div class="video" v-for="video in videos" :key="video.name">
                 <video

@@ -1,8 +1,6 @@
 <template>
     <section id="about">
-        <div class="description">
-            <h1>About</h1>
-        </div>
+        <ViewDescription>About</ViewDescription>
         <div class="about-description">
             <section class="photo">
                 <img :src="about_photo" alt="artist-photo" />

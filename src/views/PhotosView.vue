@@ -1,8 +1,6 @@
 <template>
     <section id="photos">
-        <div class="description">
-            <h1>Photos</h1>
-        </div>
+        <ViewDescription>Photos</ViewDescription>
 
         <!-- Gallery -->
         <div class="row gallery">
