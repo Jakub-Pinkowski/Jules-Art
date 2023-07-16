@@ -23,6 +23,7 @@ import TheNavigation from '@/components/TheNavigation.vue';
 </script>
 
 <style lang="scss">
+/* Desktop vs Mobile */
 .desktop {
     display: block;
 }
@@ -44,6 +45,8 @@ import TheNavigation from '@/components/TheNavigation.vue';
         margin-top: 3rem;
     }
 }
+
+/* Global styles */
 
 body {
     display: flex;
