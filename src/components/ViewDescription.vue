@@ -7,7 +7,4 @@
 </template>
 
 <style scoped lang="scss">
-.description {
-    margin: 1rem 2rem;
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <section id="home">
+    <section id="home" class="view">
         <ViewDescription>Jules-Art</ViewDescription>
         <div id="choice-container">
             <div
@@ -25,8 +25,6 @@ const views = viewStore.views;
 
 <style scoped lang="scss">
 #home {
-    margin: 1rem 2rem;
-
     #choice-container {
         display: flex;
         flex-wrap: wrap;

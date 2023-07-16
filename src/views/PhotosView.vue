@@ -1,5 +1,5 @@
 <template>
-    <section id="photos">
+    <section id="photos" class="view">
         <ViewDescription>Photos</ViewDescription>
 
         <!-- Gallery -->
@@ -93,8 +93,6 @@ const closeModal = () => {
 
 <style scoped lang="scss">
 #photos {
-    margin: 1rem 2rem;
-
     .gallery {
         img {
             transition: all 0.5s ease-out;

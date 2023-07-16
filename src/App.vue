@@ -83,6 +83,10 @@ p {
     margin-bottom: 2rem;
 }
 
+.view {
+    margin: 1rem 2rem;
+}
+
 /* Transition classes */
 
 .slide-blur-enter-active {

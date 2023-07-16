@@ -1,5 +1,5 @@
 <template>
-    <section id="about">
+    <section id="about" class="view">
         <ViewDescription>About</ViewDescription>
         <div class="about-description">
             <section class="photo">
@@ -29,8 +29,6 @@ const description =
 
 <style scoped lang="scss">
 #about {
-    margin: 1rem 2rem;
-
     .about-description {
         margin-top: 5rem;
         display: flex;

@@ -1,5 +1,5 @@
 <template>
-    <section id="reels">
+    <section id="reels" class="view">
         <ViewDescription>Reels</ViewDescription>
 
         <!-- Desktop -->
@@ -215,7 +215,6 @@ const handleTouchEnd = (evt: TouchEvent) => {
 
 <style scoped lang="scss">
 #reels {
-    margin: 1rem 2rem;
 
     /* Desktop vs Mobile */
     .desktop {
