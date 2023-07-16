@@ -1,30 +1,28 @@
 <template>
     <nav role="navigation" class="">
         <div id="menuToggle">
-            <input type="checkbox" ref='checkbox' />
+            <input type="checkbox" ref="checkbox" />
             <span></span>
             <span></span>
             <span></span>
             <ul id="menu">
                 <router-link to="/home">
-                    <li @click='close()'>Home</li>
+                    <li @click="close()">Home</li>
                 </router-link>
                 <router-link v-for="view in views" :to="view.route">
-                    <li @click='close()'>{{ view.name }}</li>
+                    <li @click="close()">{{ view.name }}</li>
                 </router-link>
             </ul>
         </div>
     </nav>
 </template>
 
-    
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useViewStore } from '@/stores/views';
 
 const viewStore = useViewStore();
 const views = viewStore.views;
-
 
 const checkbox = ref<HTMLInputElement | null>(null);
 
@@ -34,8 +32,8 @@ const close = () => {
     }
 };
 </script>
-    
-<style scoped >
+
+<style scoped>
 #menuToggle {
     display: block;
     position: absolute;
@@ -56,9 +54,8 @@ const close = () => {
 }
 
 #menuToggle a:hover {
-    color: var(--highlight-color)
+    color: var(--highlight-color);
 }
-
 
 #menuToggle input {
     display: block;
@@ -76,7 +73,6 @@ const close = () => {
     -webkit-touch-callout: none;
 }
 
-
 #menuToggle span {
     display: block;
     width: 33px;
@@ -91,9 +87,8 @@ const close = () => {
 
     transform-origin: 4px 0px;
 
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
-        opacity 0.55s ease;
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
 }
 
 #menuToggle span:first-child {
@@ -104,24 +99,20 @@ const close = () => {
     transform-origin: 0% 100%;
 }
 
-
-#menuToggle input:checked~span {
+#menuToggle input:checked ~ span {
     opacity: 1;
     transform: rotate(45deg) translate(-2px, -1px);
     background: #232323;
 }
 
-
-#menuToggle input:checked~span:nth-last-child(3) {
+#menuToggle input:checked ~ span:nth-last-child(3) {
     opacity: 0;
     transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-
-#menuToggle input:checked~span:nth-last-child(2) {
+#menuToggle input:checked ~ span:nth-last-child(2) {
     transform: rotate(-45deg) translate(0, -1px);
 }
-
 
 #menu {
     position: fixed;
@@ -140,7 +131,7 @@ const close = () => {
     transform: translateX(100%);
     transform-origin: top right;
 
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
 #menu li {
@@ -148,8 +139,7 @@ const close = () => {
     font-size: 22px;
 }
 
-#menuToggle input:checked~ul {
+#menuToggle input:checked ~ ul {
     transform: translateX(0);
-
 }
 </style>

@@ -185,22 +185,16 @@ const handleTouchMove = (evt: TouchEvent) => {
     let yDiff = yDown - yUp;
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
-        /*most significant*/
         if (xDiff > 0) {
-            /* left swipe */
             nextSlide();
         } else {
-            /* right swipe */
             prevSlide();
         }
     } else {
         if (yDiff > 0) {
-            /* up swipe */
         } else {
-            /* down swipe */
         }
     }
-    /* reset values */
     xDown = null;
     yDown = null;
 };
@@ -215,7 +209,6 @@ const handleTouchEnd = (evt: TouchEvent) => {
 
 <style scoped lang="scss">
 #reels {
-
     /* Desktop vs Mobile */
     .desktop {
         display: block;
@@ -256,7 +249,7 @@ const handleTouchEnd = (evt: TouchEvent) => {
         transition: filter 0.3s ease-out;
     }
 
-    /* Transitions */
+    /* Desktop Transitions */
     .swiper-slide video.inactive {
         filter: blur(4px);
     }

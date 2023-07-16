@@ -61,6 +61,7 @@ interface ImageObject {
     row: number;
 }
 
+// Gallery rows
 let row1: Array<ImageObject> = [];
 let row2: Array<ImageObject> = [];
 let row3: Array<ImageObject> = [];
@@ -76,8 +77,7 @@ for (i = 0; i < images.length; i++) {
     }
 }
 
-console.log(row1);
-
+// Modal functionality
 let modalOpen = ref(false);
 let modalImage = ref('');
 
@@ -104,6 +104,8 @@ const closeModal = () => {
             cursor: pointer;
         }
     }
+
+    /* Modal */
 
     .photo_modal {
         display: flex;

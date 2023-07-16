@@ -1,6 +1,4 @@
 <template>
-    <TheHead />
-
     <body>
         <TheHeader class="desktop" />
         <TheNavigation class="mobile" />
@@ -16,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import TheHead from '@/components/TheHead.vue';
 import TheHeader from '@/components/TheHeader.vue';
 import TheFooter from '@/components/TheFooter.vue';
 import TheNavigation from '@/components/TheNavigation.vue';
@@ -87,7 +84,7 @@ p {
     margin: 1rem 2rem;
 }
 
-/* Transition classes */
+/* Transition between views */
 
 .slide-blur-enter-active {
     transition: all 0.3s ease;

@@ -46,6 +46,8 @@ const videos = videoStore.videos;
     }
 }
 
+/* Mobile */
+
 @media screen and (max-width: 768px) {
     .video {
         width: 100% !important;

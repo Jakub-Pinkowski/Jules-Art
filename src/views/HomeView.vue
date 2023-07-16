@@ -62,6 +62,8 @@ const views = viewStore.views;
     }
 }
 
+/* Mobile */
+
 @media screen and (max-width: 768px) {
     #choice-container {
         flex-direction: column !important;
