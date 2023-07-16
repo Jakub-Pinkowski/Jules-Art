@@ -35,9 +35,10 @@
                         class="rounded"
                         :src="reel.src"
                         :poster="reel.poster"
+                        loop
                         controls
                     ></video>
-                    <span class="video-text"> {{ reel.title }}</span>
+                    <span class="video-text"> {{ reel.name }}</span>
                 </swiper-slide>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -68,10 +69,10 @@
                         class="carousel-item"
                         :class="{ active: index === activeIndex }"
                     >
-                        <video class="img-fluid" autoplay loop muted>
+                        <video class="img-fluid" loop controls>
                             <source :src="reel.src" type="video/mp4" />
                         </video>
-                        <div class="carousel-caption d-none d-md-block">
+                        <div class="carousel-caption d-md-block">
                             <h5>{{ reel.name }}</h5>
                         </div>
                     </div>
@@ -134,6 +135,7 @@ const onSlideChangeTransitionEnd = (swiper: any) => {
                 video.play();
             }
         } else {
+            video.classList.add('transition');
             video.classList.add('inactive');
             video.removeAttribute('controls');
             video.pause();
@@ -145,9 +147,11 @@ onMounted(() => {
     const videos = Array.from(document.querySelectorAll('video'));
     videos.forEach((video, index) => {
         if (index === 0) {
+            video.classList.remove('transition');
             video.classList.remove('inactive');
             video.setAttribute('controls', '');
         } else {
+            video.classList.add('transition');
             video.classList.add('inactive');
             video.removeAttribute('controls');
         }
@@ -212,9 +216,12 @@ const prevSlide = () => {
         display: block;
         width: 100%;
         height: auto;
+        transition: filter 0.5s ease;
     }
+
+    /* Transitions */
     .swiper-slide video.inactive {
-        filter: grayscale(100%) blur(2px);
+        filter: blur(3px);
     }
 
     .video-text {
@@ -290,11 +297,11 @@ const prevSlide = () => {
     }
 
     .carousel-control-prev-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f5f5f5' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
     }
 
     .carousel-control-next-icon {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f5f5f5' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
     }
 }
 </style>
