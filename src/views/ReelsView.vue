@@ -13,9 +13,6 @@
                 :centeredSlides="true"
                 :spaceBetween="10"
                 :slideToClickedSlide="true"
-                :pagination="{
-                    clickable: true,
-                }"
                 :navigation="{
                     nextEl: '.swiper-button-next',
                     prevEl: '.swiper-button-prev',
@@ -110,7 +107,7 @@
 import { ref, onMounted } from 'vue';
 import { useReelsStore } from '@/stores/reels';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Navigation } from 'swiper/modules';
 
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -122,7 +119,7 @@ const reelsStore = useReelsStore();
 const reels = reelsStore.reels;
 
 // Desktop
-const modules = [Pagination, Navigation];
+const modules = [Navigation];
 
 // Apply inactive classes to videos
 const onSlideChangeTransitionEnd = (swiper: any) => {
@@ -131,13 +128,16 @@ const onSlideChangeTransitionEnd = (swiper: any) => {
         if (index === swiper.activeIndex) {
             video.classList.remove('inactive');
             video.setAttribute('controls', '');
+            if (index === Math.floor(swiper.slides.length / 2)) {
+                video.play();
+            }
         } else {
             video.classList.add('inactive');
             video.removeAttribute('controls');
+            video.pause();
         }
     });
 };
-
 // Apply inactive classes to all the videos except the first one when page loads
 onMounted(() => {
     const videos = Array.from(document.querySelectorAll('video'));
