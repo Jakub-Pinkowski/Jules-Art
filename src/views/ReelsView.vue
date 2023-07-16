@@ -37,6 +37,7 @@
                         :poster="reel.poster"
                         controls
                     ></video>
+                    <span class="video-text"> {{ reel.title }}</span>
                 </swiper-slide>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -214,6 +215,16 @@ const prevSlide = () => {
     }
     .swiper-slide video.inactive {
         filter: grayscale(100%) blur(2px);
+    }
+
+    .video-text {
+        position: absolute;
+        bottom: 15px;
+        width: 100%;
+        text-align: center;
+        color: var(--light-gray);
+        font-size: 1.5rem;
+        font-weight: 600;
     }
 
     .swiper-button-next {
