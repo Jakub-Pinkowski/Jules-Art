@@ -10,9 +10,10 @@
                         <router-link class="nav-link" to="/">Home</router-link>
                     </li>
                     <li v-for="view in views" class="nav-item">
-                        <router-link class="nav-link" :to="view.route">{{ view.name }}</router-link>
+                        <router-link class="nav-link" :to="view.route">{{
+                            view.name
+                        }}</router-link>
                     </li>
-
                 </ul>
             </div>
         </div>
