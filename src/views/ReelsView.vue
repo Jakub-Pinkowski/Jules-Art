@@ -47,7 +47,13 @@
 
         <!-- Mobile -->
         <div class="mobile">
-            <div id="carouselVideoExample" class="carousel slide carousel-fade">
+            <div
+                id="carouselVideoExample"
+                class="carousel slide carousel-fade"
+                @touchstart="handleTouchStart"
+                @touchmove="handleTouchMove"
+                @touchend="handleTouchEnd"
+            >
                 <!-- Indicators -->
                 <div class="carousel-indicators">
                     <button
@@ -76,34 +82,10 @@
                             controls
                         ></video>
                         <div class="carousel-caption">
-                            <h5>{{ reel.name }}</h5>
+                            <span class="reel-title">{{ reel.name }}</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Controls -->
-                <button
-                    class="carousel-control-prev"
-                    type="button"
-                    @click="prevSlide"
-                >
-                    <span
-                        class="carousel-control-prev-icon"
-                        aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button
-                    class="carousel-control-next"
-                    type="button"
-                    @click="nextSlide"
-                >
-                    <span
-                        class="carousel-control-next-icon"
-                        aria-hidden="true"
-                    ></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
     </section>
@@ -177,6 +159,59 @@ const prevSlide = () => {
     } else {
         activeIndex.value -= 1;
     }
+};
+
+// Swiping functionality
+let xDown: number | null = null;
+let yDown: number | null = null;
+
+const getTouches = (evt: TouchEvent) => {
+    return evt.touches;
+};
+
+const handleTouchStart = (evt: TouchEvent) => {
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+};
+
+const handleTouchMove = (evt: TouchEvent) => {
+    if (!xDown || !yDown) {
+        return;
+    }
+
+    let xUp = evt.touches[0].clientX;
+    let yUp = evt.touches[0].clientY;
+
+    let xDiff = xDown - xUp;
+    let yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) > Math.abs(yDiff)) {
+        /*most significant*/
+        if (xDiff > 0) {
+            /* left swipe */
+            nextSlide();
+        } else {
+            /* right swipe */
+            prevSlide();
+        }
+    } else {
+        if (yDiff > 0) {
+            /* up swipe */
+        } else {
+            /* down swipe */
+        }
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;
+};
+
+const handleTouchEnd = (evt: TouchEvent) => {
+    if (!xDown || !yDown) {
+        return;
+    }
+    handleTouchMove(evt);
 };
 </script>
 
@@ -267,7 +302,7 @@ const prevSlide = () => {
     /* Mobile */
 
     .carousel-indicators {
-        bottom: 50px;
+        bottom: 80px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -275,9 +310,13 @@ const prevSlide = () => {
     }
 
     .carousel-caption {
-        bottom: 70px;
-        font-size: 1.5rem !important;
-        font-weight: 600 !important;
+        bottom: 100px;
+    }
+
+    .reel-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--light-gray);
     }
 
     .carousel-indicators button {
