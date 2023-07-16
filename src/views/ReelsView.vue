@@ -142,7 +142,9 @@ const onSlideChangeTransitionEnd = (swiper: any) => {
 };
 // Apply inactive classes to all the videos except the first one when page loads
 onMounted(() => {
-    const videos = Array.from(document.querySelectorAll('video'));
+    const videos = Array.from(
+        document.querySelectorAll('.desktop video')
+    ) as HTMLVideoElement[];
     videos.forEach((video, index) => {
         if (index === 0) {
             video.classList.remove('transition');
