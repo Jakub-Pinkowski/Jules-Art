@@ -131,9 +131,6 @@ const onSlideChangeTransitionEnd = (swiper: any) => {
         if (index === swiper.activeIndex) {
             video.classList.remove('inactive');
             video.setAttribute('controls', '');
-            if (index === Math.floor(swiper.slides.length / 2)) {
-                video.play();
-            }
         } else {
             video.classList.add('transition');
             video.classList.add('inactive');
