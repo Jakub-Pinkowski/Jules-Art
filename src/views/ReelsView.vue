@@ -69,9 +69,7 @@
                         class="carousel-item"
                         :class="{ active: index === activeIndex }"
                     >
-                        <video class="img-fluid" loop controls>
-                            <source :src="reel.src" type="video/mp4" />
-                        </video>
+                        <video :src="reel.src" loop controls></video>
                         <div class="carousel-caption d-md-block">
                             <h5>{{ reel.name }}</h5>
                         </div>
@@ -126,7 +124,9 @@ const modules = [Navigation];
 
 // Apply inactive classes to videos
 const onSlideChangeTransitionEnd = (swiper: any) => {
-    const videos = Array.from(document.querySelectorAll('video'));
+    const videos = Array.from(
+        document.querySelectorAll('.desktop video')
+    ) as HTMLVideoElement[];
     videos.forEach((video, index) => {
         if (index === swiper.activeIndex) {
             video.classList.remove('inactive');
@@ -284,7 +284,7 @@ const prevSlide = () => {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 90vh;
+        height: 85vh;
 
         video {
             max-height: 100%;
