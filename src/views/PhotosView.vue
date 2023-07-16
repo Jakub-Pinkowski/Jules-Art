@@ -7,16 +7,34 @@
         <!-- Gallery -->
         <div class="row gallery">
             <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                <img v-for="image in row1" :key="image.name" :src="image.src" class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Gallery Photo" @click="openModal(image.src)" />
+                <img
+                    v-for="image in row1"
+                    :key="image.name"
+                    :src="image.src"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Gallery Photo"
+                    @click="openModal(image.src)"
+                />
             </div>
             <div class="col-lg-4 mb-4 mb-lg-0">
-                <img v-for="image in row2" :key="image.name" :src="image.src" class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Gallery Photo" @click="openModal(image.src)" />
+                <img
+                    v-for="image in row2"
+                    :key="image.name"
+                    :src="image.src"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Gallery Photo"
+                    @click="openModal(image.src)"
+                />
             </div>
             <div class="col-lg-4 mb-4 mb-lg-0">
-                <img v-for="image in row3" :key="image.name" :src="image.src" class="w-100 shadow-1-strong rounded mb-4"
-                    alt="Gallery Photo" @click="openModal(image.src)" />
+                <img
+                    v-for="image in row3"
+                    :key="image.name"
+                    :src="image.src"
+                    class="w-100 shadow-1-strong rounded mb-4"
+                    alt="Gallery Photo"
+                    @click="openModal(image.src)"
+                />
             </div>
         </div>
 
@@ -45,22 +63,22 @@ interface ImageObject {
     row: number;
 }
 
-let row1: Array<ImageObject> = []
-let row2: Array<ImageObject> = []
-let row3: Array<ImageObject> = []
+let row1: Array<ImageObject> = [];
+let row2: Array<ImageObject> = [];
+let row3: Array<ImageObject> = [];
 
-let i = 0
+let i = 0;
 for (i = 0; i < images.length; i++) {
     if (i < 2) {
-        row1.push(images[i])
+        row1.push(images[i]);
     } else if (i < 5) {
-        row2.push(images[i])
+        row2.push(images[i]);
     } else {
-        row3.push(images[i])
+        row3.push(images[i]);
     }
 }
 
-console.log(row1)
+console.log(row1);
 
 let modalOpen = ref(false);
 let modalImage = ref('');
@@ -73,9 +91,8 @@ const openModal = (imageSrc: string) => {
 const closeModal = () => {
     modalOpen.value = false;
 };
-
 </script>
-  
+
 <style scoped lang="scss">
 #photos {
     margin: 1rem 2rem;
@@ -132,7 +149,6 @@ const closeModal = () => {
         object-fit: contain;
         max-width: 100%;
     }
-
 }
 
 /* Modal Transition */
@@ -151,7 +167,6 @@ const closeModal = () => {
 }
 
 /* Mobile */
-
 
 @media screen and (max-width: 768px) {
     img:hover {
