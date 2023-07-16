@@ -214,12 +214,12 @@ const prevSlide = () => {
         display: block;
         width: 100%;
         height: auto;
-        transition: filter 0.5s ease;
+        transition: filter 0.3s ease-out;
     }
 
     /* Transitions */
     .swiper-slide video.inactive {
-        filter: blur(3px);
+        filter: blur(4px);
     }
 
     .video-text {
