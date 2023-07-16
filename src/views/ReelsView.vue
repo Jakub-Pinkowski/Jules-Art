@@ -69,8 +69,13 @@
                         class="carousel-item"
                         :class="{ active: index === activeIndex }"
                     >
-                        <video :src="reel.src" loop controls></video>
-                        <div class="carousel-caption d-md-block">
+                        <video
+                            :src="reel.src"
+                            :poster="reel.poster"
+                            loop
+                            controls
+                        ></video>
+                        <div class="carousel-caption">
                             <h5>{{ reel.name }}</h5>
                         </div>
                     </div>
@@ -262,10 +267,17 @@ const prevSlide = () => {
     /* Mobile */
 
     .carousel-indicators {
+        bottom: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 1rem;
+    }
+
+    .carousel-caption {
+        bottom: 70px;
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
     }
 
     .carousel-indicators button {
