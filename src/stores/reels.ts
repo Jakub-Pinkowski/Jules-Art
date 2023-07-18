@@ -12,17 +12,17 @@ export const useReelsStore = defineStore({
     state: () => ({
         reels: [
             {
-                name: 'The Shirt',
+                name: 'One evening in Paris',
                 src: reel_1,
                 poster: reel_1_poster,
             },
             {
-                name: 'Paris',
+                name: 'Sunlight',
                 src: reel_2,
                 poster: reel_2_poster,
             },
             {
-                name: 'BER Airport',
+                name: 'Your scent',
                 src: reel_3,
                 poster: reel_3_poster,
             },
