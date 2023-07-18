@@ -119,33 +119,33 @@ const closeModal = () => {
         align-items: center;
         overflow: hidden;
         justify-content: center;
-    }
 
-    .modal-background {
-        position: fixed;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        backdrop-filter: blur(5px);
-        background-color: rgba(0, 0, 0, 0.7);
-    }
+        .modal-background {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+            background-color: rgba(0, 0, 0, 0.7);
+        }
 
-    .modal-content {
-        max-width: 1200px;
-        max-height: 900px;
-        border-radius: 4px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        .modal-content {
+            max-width: 1200px;
+            max-height: 900px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    .modal-content img {
-        width: auto;
-        height: 900px;
-        object-fit: contain;
-        max-width: 100%;
+            img {
+                width: auto;
+                height: 900px;
+                object-fit: contain;
+                max-width: 100%;
+            }
+        }
     }
 }
 

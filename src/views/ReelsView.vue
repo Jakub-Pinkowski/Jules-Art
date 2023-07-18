@@ -232,61 +232,54 @@ const handleTouchEnd = (evt: TouchEvent) => {
     .swiper {
         width: 100%;
         height: 100%;
-    }
 
-    .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 400px;
-        height: auto;
-    }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 400px;
+            height: auto;
 
-    .swiper-slide img,
-    .swiper-slide video {
-        display: block;
-        width: 100%;
-        height: auto;
-        transition: filter 0.3s ease-out;
-    }
+            img,
+            video {
+                display: block;
+                width: 100%;
+                height: auto;
+                transition: filter 0.3s ease-out;
+            }
 
-    /* Desktop Transitions */
-    .swiper-slide video.inactive {
-        filter: blur(4px);
-    }
+            video.inactive {
+                filter: blur(4px);
+            }
 
-    .video-text {
-        position: absolute;
-        bottom: 60px;
-        width: 100%;
-        text-align: center;
-        color: var(--light-gray);
-        font-size: 1.5rem;
-        font-weight: 600;
-    }
+            .video-text {
+                position: absolute;
+                bottom: 60px;
+                width: 100%;
+                text-align: center;
+                color: var(--light-gray);
+                font-size: 1.5rem;
+                font-weight: 600;
+            }
+        }
 
-    .swiper-button-next {
-        color: var(--main-bg-color);
-        height: 50px !important;
-        width: 50px !important;
-    }
+        .swiper-button-next {
+            color: var(--main-bg-color);
+            height: 50px !important;
+            width: 50px !important;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f5f5f5' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+        }
 
-    .swiper-button-prev {
-        color: var(--main-bg-color);
-        height: 50px !important;
-        width: 50px !important;
-    }
+        .swiper-button-prev {
+            color: var(--main-bg-color);
+            height: 50px !important;
+            width: 50px !important;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f5f5f5' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+        }
 
-    .swiper-button-prev {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f5f5f5' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
-    }
-
-    .swiper-button-next {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f5f5f5' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-    }
-
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-        content: '';
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            content: '';
+        }
     }
 
     /* Mobile */
@@ -297,30 +290,20 @@ const handleTouchEnd = (evt: TouchEvent) => {
         justify-content: center;
         align-items: center;
         gap: 1rem;
-    }
 
-    .carousel-caption {
-        bottom: 100px;
-    }
+        button {
+            width: 35px;
+            height: 4px;
+            background-color: var(--light-gray);
+            border: none;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
 
-    .reel-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--light-gray);
-    }
-
-    .carousel-indicators button {
-        width: 35px;
-        height: 4px;
-        background-color: var(--light-gray);
-        border: none;
-        padding: 0;
-        margin: 0;
-        cursor: pointer;
-    }
-
-    .carousel-indicators button.active {
-        background-color: var(--dark-gray);
+        button.active {
+            background-color: var(--dark-gray);
+        }
     }
 
     .carousel-item {
@@ -334,6 +317,16 @@ const handleTouchEnd = (evt: TouchEvent) => {
             max-width: 100%;
             height: auto;
             width: auto;
+        }
+
+        .carousel-caption {
+            bottom: 100px;
+
+            .reel-title {
+                font-size: 1.5rem;
+                font-weight: 600;
+                color: var(--light-gray);
+            }
         }
     }
 

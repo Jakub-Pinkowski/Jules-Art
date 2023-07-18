@@ -33,113 +33,99 @@ const close = () => {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 #menuToggle {
     display: block;
     position: absolute;
     top: 50px;
     right: 50px;
-
     z-index: 10000;
-
     -webkit-user-select: none;
     user-select: none;
-}
 
-#menuToggle a {
-    text-decoration: none;
-    color: #232323;
+    a {
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
+    }
 
-    transition: color 0.3s ease;
-}
+    a:hover {
+        color: var(--highlight-color);
+    }
 
-#menuToggle a:hover {
-    color: var(--highlight-color);
-}
+    input {
+        display: block;
+        width: 40px;
+        height: 32px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 20000;
+        -webkit-touch-callout: none;
+    }
 
-#menuToggle input {
-    display: block;
-    width: 40px;
-    height: 32px;
-    position: absolute;
-    top: -7px;
-    left: -5px;
+    span {
+        display: block;
+        width: 33px;
+        height: 4px;
+        margin-bottom: 5px;
+        position: relative;
+        background: var(--highlight-color);
+        border-radius: 3px;
+        z-index: 10000;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+            background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+    }
 
-    cursor: pointer;
+    span:first-child {
+        transform-origin: 0% 0%;
+    }
 
-    opacity: 0;
-    z-index: 20000;
+    span:nth-last-child(2) {
+        transform-origin: 0% 100%;
+    }
 
-    -webkit-touch-callout: none;
-}
+    #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
 
-#menuToggle span {
-    display: block;
-    width: 33px;
-    height: 4px;
-    margin-bottom: 5px;
-    position: relative;
+    #menuToggle input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
 
-    background: var(--highlight-color);
-    border-radius: 3px;
+    #menuToggle input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
 
-    z-index: 10000;
+    #menu {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 300px;
+        padding: 50px;
+        padding-top: 125px;
+        height: 100vh;
+        background: #ededed;
+        list-style-type: none;
+        -webkit-font-smoothing: antialiased;
+        transform: translateX(100%);
+        transform-origin: top right;
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 
-    transform-origin: 4px 0px;
+        li {
+            padding: 10px 0;
+            font-size: 22px;
+        }
 
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-        background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-    transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-    transform-origin: 0% 100%;
-}
-
-#menuToggle input:checked ~ span {
-    opacity: 1;
-    transform: rotate(45deg) translate(-2px, -1px);
-    background: #232323;
-}
-
-#menuToggle input:checked ~ span:nth-last-child(3) {
-    opacity: 0;
-    transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-#menuToggle input:checked ~ span:nth-last-child(2) {
-    transform: rotate(-45deg) translate(0, -1px);
-}
-
-#menu {
-    position: fixed;
-    right: 0;
-
-    top: 0;
-
-    width: 300px;
-    padding: 50px;
-    padding-top: 125px;
-    height: 100vh;
-    background: #ededed;
-    list-style-type: none;
-    -webkit-font-smoothing: antialiased;
-
-    transform: translateX(100%);
-    transform-origin: top right;
-
-    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-}
-
-#menu li {
-    padding: 10px 0;
-    font-size: 22px;
-}
-
-#menuToggle input:checked ~ ul {
-    transform: translateX(0);
+        input:checked ~ ul {
+            transform: translateX(0);
+        }
+    }
 }
 </style>
