@@ -32,14 +32,14 @@ const views = viewStore.views;
     margin: 0.5rem 1.2rem;
     font-size: 1.2rem;
     color: var(--main-bg-color);
-
-    .navbarSupportedContent {
-        display: flex;
-        justify-content: flex-end;
-    }
 }
 
 .nav-link:hover {
     color: var(--highlight-color);
+}
+
+.navbarSupportedContent {
+    display: flex;
+    justify-content: flex-end;
 }
 </style>
