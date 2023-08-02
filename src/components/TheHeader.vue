@@ -24,6 +24,7 @@
 import { useViewStore } from '@/stores/views';
 
 const viewStore = useViewStore();
+viewStore.fetchImages();
 const views = viewStore.views;
 </script>
 
