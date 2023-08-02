@@ -1,5 +1,4 @@
 import { defineStore } from 'pinia';
-import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
 import view_photos from '@/assets/views/view_photos.jpg';
 import view_videos from '@/assets/views/view_videos.jpg';
