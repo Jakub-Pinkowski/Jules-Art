@@ -78,6 +78,7 @@
                             :poster="reel.poster"
                             loop
                             controls
+                            playsinline
                         ></video>
                         <div class="carousel-caption">
                             <span class="reel-title">{{ reel.name }}</span>

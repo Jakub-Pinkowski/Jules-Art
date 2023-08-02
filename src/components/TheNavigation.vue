@@ -53,7 +53,7 @@ const close = () => {
         color: var(--highlight-color);
     }
 
-    input {
+    & > input {
         display: block;
         width: 40px;
         height: 32px;
@@ -64,6 +64,25 @@ const close = () => {
         opacity: 0;
         z-index: 20000;
         -webkit-touch-callout: none;
+    }
+
+    & > input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+
+    & > input:checked ~ span:nth-last-child(3) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2);
+    }
+
+    & > input:checked ~ span:nth-last-child(2) {
+        transform: rotate(-45deg) translate(0, -1px);
+    }
+
+    & > input:checked ~ #menu {
+        transform: translateX(0);
     }
 
     span {
@@ -88,21 +107,6 @@ const close = () => {
         transform-origin: 0% 100%;
     }
 
-    #menuToggle input:checked ~ span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
-        background: #232323;
-    }
-
-    #menuToggle input:checked ~ span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-    }
-
-    #menuToggle input:checked ~ span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
-    }
-
     #menu {
         position: fixed;
         right: 0;
@@ -121,10 +125,6 @@ const close = () => {
         li {
             padding: 10px 0;
             font-size: 22px;
-        }
-
-        input:checked ~ ul {
-            transform: translateX(0);
         }
     }
 }
