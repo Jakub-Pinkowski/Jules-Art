@@ -102,6 +102,7 @@ import 'swiper/css/navigation';
 
 // Import data from store
 const reelsStore = useReelsStore();
+reelsStore.fetchReelsAndPosters();
 const reels = reelsStore.reels;
 
 // Desktop

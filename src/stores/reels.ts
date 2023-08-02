@@ -1,13 +1,5 @@
 import { defineStore } from 'pinia';
-
-import reel_1 from '@/assets/reels/reel_1.mov';
-import reel_2 from '@/assets/reels/reel_2.mov';
-import reel_3 from '@/assets/reels/reel_3.mov';
-import reel_4 from '@/assets/reels/reel_4.mov';
-import reel_1_poster from '@/assets/reels/reel_1_poster.jpg';
-import reel_2_poster from '@/assets/reels/reel_2_poster.jpg';
-import reel_3_poster from '@/assets/reels/reel_3_poster.jpg';
-import reel_4_poster from '@/assets/reels/reel_4_poster.jpg';
+import { getStorage, ref, getDownloadURL } from 'firebase/storage';
 
 export const useReelsStore = defineStore({
     id: 'reelStore',
@@ -15,24 +7,43 @@ export const useReelsStore = defineStore({
         reels: [
             {
                 name: 'One evening in Paris',
-                src: reel_1,
-                poster: reel_1_poster,
+                firebaseName: 'reel_1',
+                src: '',
+                poster: '',
             },
             {
                 name: 'Mon Paris',
-                src: reel_4,
-                poster: reel_4_poster,
+                firebaseName: 'reel_4',
+                src: '',
+                poster: '',
             },
             {
                 name: 'Sunlight',
-                src: reel_2,
-                poster: reel_2_poster,
+                firebaseName: 'reel_2',
+                src: '',
+                poster: '',
             },
             {
                 name: 'Your scent',
-                src: reel_3,
-                poster: reel_3_poster,
+                firebaseName: 'reel_3',
+                src: '',
+                poster: '',
             },
         ],
     }),
+    actions: {
+        async fetchReelsAndPosters() {
+            const storage = getStorage();
+
+            for (let reel of this.reels) {
+                const reelName = `reels/${reel.firebaseName}.mov`;
+                const reelRef = ref(storage, reelName);
+                reel.src = await getDownloadURL(reelRef);
+
+                const posterName = `reels/${reel.firebaseName}_poster.jpg`;
+                const posterRef = ref(storage, posterName);
+                reel.poster = await getDownloadURL(posterRef);
+            }
+        },
+    },
 });
