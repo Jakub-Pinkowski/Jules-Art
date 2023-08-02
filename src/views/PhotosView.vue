@@ -53,6 +53,7 @@ import { ref } from 'vue';
 import { useImageStore } from '@/stores/images';
 
 const imageStore = useImageStore();
+imageStore.fetchImages();
 const images = imageStore.images;
 
 interface ImageObject {
