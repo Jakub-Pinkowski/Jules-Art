@@ -1,5 +1,12 @@
 import { defineStore } from 'pinia';
-import { getStorage, ref, getDownloadURL } from 'firebase/storage';
+
+import image1 from '@/assets/images/1.jpg';
+import image2 from '@/assets/images/2.jpg';
+import image3 from '@/assets/images/3.jpg';
+import image4 from '@/assets/images/4.jpg';
+import image5 from '@/assets/images/5.jpg';
+import image6 from '@/assets/images/6.jpg';
+import image7 from '@/assets/images/7.jpg';
 
 export const useImageStore = defineStore({
     id: 'imageStore',
@@ -7,57 +14,39 @@ export const useImageStore = defineStore({
         images: [
             {
                 name: 'image1',
-                firebaseName: '1',
-                src: '',
+                src: image1,
                 row: 1,
             },
             {
                 name: 'image2',
-                firebaseName: '2',
-                src: '',
+                src: image2,
                 row: 1,
             },
             {
                 name: 'image3',
-                firebaseName: '3',
-                src: '',
+                src: image3,
                 row: 2,
             },
             {
                 name: 'image4',
-                firebaseName: '4',
-                src: '',
+                src: image4,
                 row: 2,
             },
             {
                 name: 'image5',
-                firebaseName: '5',
-                src: '',
+                src: image5,
                 row: 2,
             },
             {
                 name: 'image6',
-                firebaseName: '6',
-                src: '',
+                src: image6,
                 row: 3,
             },
             {
                 name: 'image7',
-                firebaseName: '7',
-                src: '',
+                src: image7,
                 row: 3,
             },
         ],
     }),
-    actions: {
-        async fetchImages() {
-            const storage = getStorage();
-
-            for (let image of this.images) {
-                const imageName = `images/${image.firebaseName}.jpg`;
-                const imageRef = ref(storage, imageName);
-                image.src = await getDownloadURL(imageRef);
-            }
-        },
-    },
 });

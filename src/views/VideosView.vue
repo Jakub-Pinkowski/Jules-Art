@@ -19,7 +19,6 @@
 import { useVideoStore } from '@/stores/videos';
 
 const videoStore = useVideoStore();
-videoStore.fetchVideosAndPosters();
 const videos = videoStore.videos;
 </script>
 

@@ -22,7 +22,6 @@ import { ref } from 'vue';
 import { useViewStore } from '@/stores/views';
 
 const viewStore = useViewStore();
-viewStore.fetchImages();
 const views = viewStore.views;
 
 const checkbox = ref<HTMLInputElement | null>(null);

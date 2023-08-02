@@ -1,5 +1,9 @@
 import { defineStore } from 'pinia';
-import { getStorage, ref, getDownloadURL } from 'firebase/storage';
+
+import berlin_romance_1 from '@/assets/videos/Berlin_Romance_1.mov';
+import berlin_romance_2 from '@/assets/videos/Berlin_Romance_2.mov';
+import poster1 from '@/assets/videos/Berlin_Romance_1.jpg';
+import poster2 from '@/assets/videos/Berlin_Romance_2.jpg';
 
 export const useVideoStore = defineStore({
     id: 'videoStore',
@@ -7,31 +11,14 @@ export const useVideoStore = defineStore({
         videos: [
             {
                 name: 'Berlin Romance part 1',
-                firebaseName: 'Berlin_Romance_1',
-                src: '',
-                poster: '',
+                src: berlin_romance_1,
+                poster: poster1,
             },
             {
                 name: 'Berlin Romance part 2',
-                firebaseName: 'Berlin_Romance_2',
-                src: '',
-                poster: '',
+                src: berlin_romance_2,
+                poster: poster2,
             },
         ],
     }),
-    actions: {
-        async fetchVideosAndPosters() {
-            const storage = getStorage();
-
-            for (let video of this.videos) {
-                const videoName = `videos/${video.firebaseName}.mov`;
-                const videoRef = ref(storage, videoName);
-                video.src = await getDownloadURL(videoRef);
-
-                const posterName = `videos/${video.firebaseName}.jpg`;
-                const posterRef = ref(storage, posterName);
-                video.poster = await getDownloadURL(posterRef);
-            }
-        },
-    },
 });
