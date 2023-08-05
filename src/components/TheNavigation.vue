@@ -18,19 +18,19 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useViewStore } from '@/stores/views';
+import { ref } from 'vue'
+import { useViewStore } from '@/stores/views'
 
-const viewStore = useViewStore();
-const views = viewStore.views;
+const viewStore = useViewStore()
+const views = viewStore.views
 
-const checkbox = ref<HTMLInputElement | null>(null);
+const checkbox = ref<HTMLInputElement | null>(null)
 
 const close = () => {
     if (checkbox.value) {
-        checkbox.value.checked = false;
+        checkbox.value.checked = false
     }
-};
+}
 </script>
 
 <style scoped lang="scss">

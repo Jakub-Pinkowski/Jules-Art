@@ -21,10 +21,10 @@
 </template>
 
 <script setup lang="ts">
-import { useViewStore } from '@/stores/views';
+import { useViewStore } from '@/stores/views'
 
-const viewStore = useViewStore();
-const views = viewStore.views;
+const viewStore = useViewStore()
+const views = viewStore.views
 </script>
 
 <style scoped lang="scss">

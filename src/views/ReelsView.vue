@@ -91,121 +91,121 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import { useReelsStore } from '@/stores/reels';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Navigation } from 'swiper/modules';
+import { ref, onMounted } from 'vue'
+import { useReelsStore } from '@/stores/reels'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import { Navigation } from 'swiper/modules'
 
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import 'swiper/css'
+import 'swiper/css/effect-coverflow'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 // Import data from store
-const reelsStore = useReelsStore();
-const reels = reelsStore.reels;
+const reelsStore = useReelsStore()
+const reels = reelsStore.reels
 
 // Desktop
-const modules = [Navigation];
+const modules = [Navigation]
 
 // Apply inactive classes to videos
 const onSlideChangeTransitionEnd = (swiper: any) => {
     const videos = Array.from(
         document.querySelectorAll('.desktop video')
-    ) as HTMLVideoElement[];
+    ) as HTMLVideoElement[]
     videos.forEach((video, index) => {
         if (index === swiper.activeIndex) {
-            video.classList.remove('inactive');
-            video.setAttribute('controls', '');
+            video.classList.remove('inactive')
+            video.setAttribute('controls', '')
         } else {
-            video.classList.add('transition');
-            video.classList.add('inactive');
-            video.removeAttribute('controls');
-            video.pause();
-            video.removeAttribute('autoplay');
+            video.classList.add('transition')
+            video.classList.add('inactive')
+            video.removeAttribute('controls')
+            video.pause()
+            video.removeAttribute('autoplay')
         }
-    });
-};
+    })
+}
 // Apply inactive classes to all the videos except the first one when page loads
 onMounted(() => {
     const videos = Array.from(
         document.querySelectorAll('.desktop video')
-    ) as HTMLVideoElement[];
+    ) as HTMLVideoElement[]
     videos.forEach((video, index) => {
         if (index === 0) {
-            video.classList.remove('transition');
-            video.classList.remove('inactive');
-            video.setAttribute('controls', '');
+            video.classList.remove('transition')
+            video.classList.remove('inactive')
+            video.setAttribute('controls', '')
         } else {
-            video.classList.add('transition');
-            video.classList.add('inactive');
-            video.removeAttribute('controls');
+            video.classList.add('transition')
+            video.classList.add('inactive')
+            video.removeAttribute('controls')
         }
-    });
-});
+    })
+})
 
 // Mobile
-const activeIndex = ref(0);
+const activeIndex = ref(0)
 
 // Carousel finctionality
 const nextSlide = () => {
-    activeIndex.value = (activeIndex.value + 1) % reels.length;
-};
+    activeIndex.value = (activeIndex.value + 1) % reels.length
+}
 
 const prevSlide = () => {
     if (activeIndex.value === 0) {
-        activeIndex.value = reels.length - 1;
+        activeIndex.value = reels.length - 1
     } else {
-        activeIndex.value -= 1;
+        activeIndex.value -= 1
     }
-};
+}
 
 // Swiping functionality
-let xDown: number | null = null;
-let yDown: number | null = null;
+let xDown: number | null = null
+let yDown: number | null = null
 
 const getTouches = (evt: TouchEvent) => {
-    return evt.touches;
-};
+    return evt.touches
+}
 
 const handleTouchStart = (evt: TouchEvent) => {
-    const firstTouch = getTouches(evt)[0];
-    xDown = firstTouch.clientX;
-    yDown = firstTouch.clientY;
-};
+    const firstTouch = getTouches(evt)[0]
+    xDown = firstTouch.clientX
+    yDown = firstTouch.clientY
+}
 
 const handleTouchMove = (evt: TouchEvent) => {
     if (!xDown || !yDown) {
-        return;
+        return
     }
 
-    let xUp = evt.touches[0].clientX;
-    let yUp = evt.touches[0].clientY;
+    let xUp = evt.touches[0].clientX
+    let yUp = evt.touches[0].clientY
 
-    let xDiff = xDown - xUp;
-    let yDiff = yDown - yUp;
+    let xDiff = xDown - xUp
+    let yDiff = yDown - yUp
 
     if (Math.abs(xDiff) > Math.abs(yDiff)) {
         if (xDiff > 0) {
-            nextSlide();
+            nextSlide()
         } else {
-            prevSlide();
+            prevSlide()
         }
     } else {
         if (yDiff > 0) {
         } else {
         }
     }
-    xDown = null;
-    yDown = null;
-};
+    xDown = null
+    yDown = null
+}
 
 const handleTouchEnd = (evt: TouchEvent) => {
     if (!xDown || !yDown) {
-        return;
+        return
     }
-    handleTouchMove(evt);
-};
+    handleTouchMove(evt)
+}
 </script>
 
 <style scoped lang="scss">

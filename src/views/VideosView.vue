@@ -16,10 +16,10 @@
 </template>
 
 <script setup lang="ts">
-import { useVideoStore } from '@/stores/videos';
+import { useVideoStore } from '@/stores/videos'
 
-const videoStore = useVideoStore();
-const videos = videoStore.videos;
+const videoStore = useVideoStore()
+const videos = videoStore.videos
 </script>
 
 <style scoped lang="scss">

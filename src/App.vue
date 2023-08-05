@@ -1,22 +1,20 @@
 <template>
-    <body>
-        <TheHeader class="desktop" />
-        <TheNavigation class="mobile" />
-        <main>
-            <router-view v-slot="{ Component }">
-                <transition name="slide-blur" mode="out-in">
-                    <component :is="Component" />
-                </transition>
-            </router-view>
-        </main>
-        <TheFooter />
-    </body>
+    <TheHeader class="desktop" />
+    <TheNavigation class="mobile" />
+    <main>
+        <router-view v-slot="{ Component }">
+            <transition name="slide-blur" mode="out-in">
+                <component :is="Component" />
+            </transition>
+        </router-view>
+    </main>
+    <TheFooter />
 </template>
 
 <script setup lang="ts">
-import TheHeader from '@/components/TheHeader.vue';
-import TheFooter from '@/components/TheFooter.vue';
-import TheNavigation from '@/components/TheNavigation.vue';
+import TheHeader from '@/components/TheHeader.vue'
+import TheFooter from '@/components/TheFooter.vue'
+import TheNavigation from '@/components/TheNavigation.vue'
 </script>
 
 <style lang="scss">

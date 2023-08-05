@@ -1,9 +1,9 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
-import berlin_romance_1 from '@/assets/videos/Berlin_Romance_1.mov';
-import berlin_romance_2 from '@/assets/videos/Berlin_Romance_2.mov';
-import poster1 from '@/assets/videos/Berlin_Romance_1.jpg';
-import poster2 from '@/assets/videos/Berlin_Romance_2.jpg';
+import berlin_romance_1 from '@/assets/videos/Berlin_Romance_1.mov'
+import berlin_romance_2 from '@/assets/videos/Berlin_Romance_2.mov'
+import poster1 from '@/assets/videos/Berlin_Romance_1.jpg'
+import poster2 from '@/assets/videos/Berlin_Romance_2.jpg'
 
 export const useVideoStore = defineStore({
     id: 'videoStore',
@@ -21,4 +21,4 @@ export const useVideoStore = defineStore({
             },
         ],
     }),
-});
+})

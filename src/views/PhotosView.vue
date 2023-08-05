@@ -49,46 +49,46 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useImageStore } from '@/stores/images';
+import { ref } from 'vue'
+import { useImageStore } from '@/stores/images'
 
-const imageStore = useImageStore();
-const images = imageStore.images;
+const imageStore = useImageStore()
+const images = imageStore.images
 
 interface ImageObject {
-    name: string;
-    src: string;
-    row: number;
+    name: string
+    src: string
+    row: number
 }
 
 // Gallery rows
-let row1: Array<ImageObject> = [];
-let row2: Array<ImageObject> = [];
-let row3: Array<ImageObject> = [];
+let row1: Array<ImageObject> = []
+let row2: Array<ImageObject> = []
+let row3: Array<ImageObject> = []
 
-let i = 0;
+let i = 0
 for (i = 0; i < images.length; i++) {
     if (i < 2) {
-        row1.push(images[i]);
+        row1.push(images[i])
     } else if (i < 5) {
-        row2.push(images[i]);
+        row2.push(images[i])
     } else {
-        row3.push(images[i]);
+        row3.push(images[i])
     }
 }
 
 // Modal functionality
-let modalOpen = ref(false);
-let modalImage = ref('');
+let modalOpen = ref(false)
+let modalImage = ref('')
 
 const openModal = (imageSrc: string) => {
-    modalImage.value = imageSrc;
-    modalOpen.value = true;
-};
+    modalImage.value = imageSrc
+    modalOpen.value = true
+}
 
 const closeModal = () => {
-    modalOpen.value = false;
-};
+    modalOpen.value = false
+}
 </script>
 
 <style scoped lang="scss">

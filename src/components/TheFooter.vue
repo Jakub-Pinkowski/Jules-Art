@@ -45,8 +45,8 @@
 </template>
 
 <script setup lang="ts">
-const link_github = 'https://github.com/Jakub-Pinkowski';
-const link_linkedin = 'https://www.linkedin.com/in/jakub-pinkowski-b44405134/';
+const link_github = 'https://github.com/Jakub-Pinkowski'
+const link_linkedin = 'https://www.linkedin.com/in/jakub-pinkowski-b44405134/'
 </script>
 
 <style scoped>
