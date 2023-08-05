@@ -44,26 +44,27 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-import icon_fb from '../assets/icons/fb_icon.svg';
-import icon_insta from '../assets/icons/insta_icon.svg';
+import icon_fb from '../assets/icons/fb_icon.svg'
+import icon_insta from '../assets/icons/insta_icon.svg'
 
-const link_fb = 'https://www.facebook.com/julesmatiasart';
-const link_insta = 'https://www.instagram.com/jules_matias/?hl=en';
+const link_fb = 'https://www.facebook.com/julesmatiasart'
+const link_insta = 'https://www.instagram.com/jules_matias/?hl=en'
 
-const name = ref('');
-const email = ref('');
-const message = ref('');
+const name = ref('')
+const email = ref('')
+const message = ref('')
 
 const submitForm = () => {
-    const formData = new FormData();
+    // BUG: Fix the whole form submission
+    const formData = new FormData()
 
-    const url = 'https://formspree.io/f/xgejepyk';
+    const url = 'https://formspree.io/f/xgejepyk'
 
-    formData.append('name', name.value);
-    formData.append('email', email.value);
-    formData.append('message', message.value);
+    formData.append('name', name.value)
+    formData.append('email', email.value)
+    formData.append('message', message.value)
 
     fetch(url, {
         method: 'POST',
@@ -71,24 +72,24 @@ const submitForm = () => {
     })
         .then((response) => {
             if (response.ok) {
-                alert('Your message has been sent!');
-                resetForm();
+                alert('Your message has been sent!')
+                resetForm()
             } else {
-                alert('Something went wrong. Please try again later.');
+                alert('Something went wrong. Please try again later.')
             }
         })
         .catch((error) => {
-            alert('Your message has been sent!');
-            console.log(error);
-            resetForm();
-        });
-};
+            alert('Your message has been sent!')
+            console.log(error)
+            resetForm()
+        })
+}
 
 const resetForm = () => {
-    name.value = '';
-    email.value = '';
-    message.value = '';
-};
+    name.value = ''
+    email.value = ''
+    message.value = ''
+}
 </script>
 
 <style scoped lang="scss">
