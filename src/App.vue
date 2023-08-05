@@ -1,14 +1,16 @@
 <template>
-    <TheHeader class="desktop" />
-    <TheNavigation class="mobile" />
-    <main>
-        <router-view v-slot="{ Component }">
-            <transition name="slide-blur" mode="out-in">
-                <component :is="Component" />
-            </transition>
-        </router-view>
-    </main>
-    <TheFooter />
+    <body>
+        <TheHeader class="desktop" />
+        <TheNavigation class="mobile" />
+        <main>
+            <router-view v-slot="{ Component }">
+                <transition name="slide-blur" mode="out-in">
+                    <component :is="Component" />
+                </transition>
+            </router-view>
+        </main>
+        <TheFooter />
+    </body>
 </template>
 
 <script setup lang="ts">
