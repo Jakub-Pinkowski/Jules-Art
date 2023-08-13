@@ -1,6 +1,6 @@
 <template>
     <section id="reels" class="view">
-        <ViewDescription>Reels</ViewDescription>
+        <h1>Reels</h1>
 
         <!-- Desktop -->
         <div class="desktop">
@@ -209,7 +209,7 @@ const handleTouchEnd = (evt: TouchEvent) => {
 </script>
 
 <style scoped lang="scss">
-#reels {
+.view {
     /* Desktop vs Mobile */
     .desktop {
         display: block;

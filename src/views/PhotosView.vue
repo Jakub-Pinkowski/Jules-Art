@@ -1,6 +1,6 @@
 <template>
-    <section id="photos" class="view">
-        <ViewDescription>Photos</ViewDescription>
+    <section class="view">
+        <h1>Photos</h1>
 
         <!-- Gallery -->
         <div class="row gallery">
@@ -92,7 +92,7 @@ const closeModal = () => {
 </script>
 
 <style scoped lang="scss">
-#photos {
+.view {
     .gallery {
         img {
             transition: all 0.5s ease-out;

@@ -1,7 +1,7 @@
 <template>
-    <section id="home" class="view">
-        <ViewDescription>Jules-Art</ViewDescription>
-        <div id="choice-container">
+    <section class="view">
+        <h1>Jules-Art</h1>
+        <div class="choice-container">
             <div
                 class="choice"
                 v-for="(view, index) in views.slice(0, views.length - 1)"
@@ -24,8 +24,8 @@ const views = viewStore.views
 </script>
 
 <style scoped lang="scss">
-#home {
-    #choice-container {
+.view {
+    .choice-container {
         display: flex;
         flex-wrap: wrap;
         flex-direction: row;

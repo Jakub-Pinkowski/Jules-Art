@@ -45,6 +45,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import axios from 'axios'
 
 import icon_fb from '../assets/icons/fb_icon.svg'
 import icon_insta from '../assets/icons/insta_icon.svg'
@@ -56,8 +57,7 @@ const name = ref('')
 const email = ref('')
 const message = ref('')
 
-const submitForm = () => {
-    // BUG: Fix the whole form submission
+const submitForm = async () => {
     const formData = new FormData()
 
     const url = 'https://formspree.io/f/xgejepyk'
@@ -66,23 +66,22 @@ const submitForm = () => {
     formData.append('email', email.value)
     formData.append('message', message.value)
 
-    fetch(url, {
-        method: 'POST',
-        body: formData,
-    })
-        .then((response) => {
-            if (response.ok) {
-                alert('Your message has been sent!')
-                resetForm()
-            } else {
-                alert('Something went wrong. Please try again later.')
-            }
+    try {
+        const response = await axios.post(url, formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
         })
-        .catch((error) => {
+
+        if (response.status === 200) {
             alert('Your message has been sent!')
-            console.log(error)
             resetForm()
-        })
+        } else {
+            alert('Something went wrong. Please try again later.')
+        }
+    } catch (error) {
+        alert('Something went wrong. Please try again later.')
+    }
 }
 
 const resetForm = () => {

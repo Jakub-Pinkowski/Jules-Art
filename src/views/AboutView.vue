@@ -1,6 +1,6 @@
 <template>
-    <section id="about" class="view">
-        <ViewDescription>About</ViewDescription>
+    <section class="view">
+        <h1>About</h1>
         <div class="about-description">
             <section class="photo">
                 <img :src="about_photo" alt="artist-photo" />
@@ -28,7 +28,7 @@ const description =
 </script>
 
 <style scoped lang="scss">
-#about {
+.view {
     .about-description {
         margin-top: 5rem;
         display: flex;

@@ -1,5 +1,5 @@
 <template>
-    <body>
+    <div class="body">
         <TheHeader class="desktop" />
         <TheNavigation class="mobile" />
         <main>
@@ -10,7 +10,7 @@
             </router-view>
         </main>
         <TheFooter />
-    </body>
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -45,7 +45,7 @@ import TheNavigation from '@/components/TheNavigation.vue'
 
 /* Global styles */
 
-body {
+.body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
