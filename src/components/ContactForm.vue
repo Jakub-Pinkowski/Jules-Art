@@ -32,7 +32,7 @@
                     name="message"
                     id="message"
                     cols="20"
-                    rows="5"
+                    rows="3"
                     placeholder="Message"
                     v-model="message"
                     required
@@ -58,7 +58,6 @@ const email = ref('')
 const message = ref('')
 
 const submitForm = async () => {
-
     const formData = new FormData()
 
     const url = 'https://formspree.io/f/xgejepyk'
