@@ -65,7 +65,7 @@ const views = viewStore.views
 /* Mobile */
 
 @media screen and (max-width: 768px) {
-    #choice-container {
+    .choice-container {
         flex-direction: column !important;
         justify-content: center;
         align-items: center;
