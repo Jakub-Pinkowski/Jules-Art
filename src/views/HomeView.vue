@@ -55,6 +55,7 @@ import { useViewStore } from '@/stores/views'
 
 import about_photo from '@/assets/images/about.jpg'
 import HomeSVG from '@/components/UI/HomeSVG.vue'
+import HomeSVG_2 from '@/components/UI/HomeSVG_2.vue'
 import ContactForm from '../components/ContactForm.vue'
 
 const viewStore = useViewStore()
@@ -104,14 +105,16 @@ const services = [
             }
 
             .photo {
-                width: 40%;
-                height: 100%;
+                justify-content: center;
+                text-align: center;
 
+                width: 50%;
+                height: 100%;
                 position: relative;
 
                 img {
-                    width: 100%;
-                    height: 100%;
+                    width: 60%;
+                    height: 60%;
                     border-radius: 50%;
                     object-fit: cover;
                 }
