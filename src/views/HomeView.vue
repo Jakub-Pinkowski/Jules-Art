@@ -375,4 +375,155 @@ const email = 'iu.matiash@gmail.com'
 }
 
 /* Mobile */
+
+@media screen and (max-width: 768px) {
+    .view {
+        margin: 0;
+        .sections_container {
+            .about {
+                flex-direction: column;
+
+                .text {
+                    width: 100%;
+                    margin-right: 0;
+                }
+
+                .photo {
+                    width: 100%;
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                }
+            }
+
+            .portfolio {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+
+                .portfolio_list {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    padding: 0;
+
+                    li {
+                        width: 100%;
+                        height: 100%;
+                        padding: 1rem;
+
+                        button {
+                            margin-top: 1rem;
+                            height: 50px;
+                            width: 200px;
+                        }
+
+                        button:hover {
+                            transform: scale(1);
+                        }
+
+                        img {
+                            width: 100%;
+                            height: auto;
+                            border-radius: 5%;
+                            filter: brightness(80%);
+                            transition: all 0.3s ease-in-out;
+                        }
+
+                        img:hover {
+                            filter: brightness(100%);
+                            transform: scale(1);
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+
+            .services {
+                flex-direction: column;
+
+                .text {
+                    ul {
+                        margin-right: 0;
+                    }
+                }
+
+                .photos {
+                    width: 100%;
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    img {
+                        width: 45%;
+                        height: auto;
+                        border-radius: 5%;
+                        object-fit: cover;
+                    }
+                }
+            }
+
+            .contact {
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .contact_container {
+                    width: 90%;
+                    margin: 2rem;
+
+                    .forms_container {
+                        justify-content: center;
+                        align-items: center;
+
+                        .contact_form {
+                            span {
+                                font-size: 1rem;
+                                font-weight: 300;
+                                margin: 0;
+                            }
+                        }
+
+                        .email_form {
+                            margin-top: 1rem;
+
+                            a {
+                                color: var(--dark-accent);
+                                text-decoration: none;
+                                font-size: 1.3rem;
+                                font-weight: 400;
+                                margin-bottom: 3rem;
+                            }
+
+                            .social_media {
+                                margin-top: 1rem;
+                            }
+
+                            .final_message {
+                                margin-top: 2rem;
+                            }
+                        }
+                    }
+                }
+
+                .photo {
+                    width: 100%;
+                    margin-top: 2rem;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    img {
+                        width: 90%;
+                        height: auto;
+                        border-radius: 5%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
 </style>
