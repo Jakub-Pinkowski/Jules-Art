@@ -13,7 +13,7 @@
 import icon_insta from '../../assets/icons/insta_icon.svg'
 import tiktok_icon from '../../assets/icons/tiktok_icon.svg'
 const link_insta = 'https://www.instagram.com/jules_matias/?hl=en'
-const link_tiktok = 'https://www.tiktok.com/@julesmatiasart?lang=en'
+const link_tiktok = 'https://www.tiktok.com/@jules_matias?_t=8g9XXu8AGnI&_r=1'
 </script>
 
 <style scoped lang="scss">
