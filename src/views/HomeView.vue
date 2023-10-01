@@ -36,7 +36,7 @@
                 <p>
                     {{ services_description }}
                 </p>
-                <ul>
+                <ul class="services_list">
                     <li v-for="item in services">
                         <h4>{{ item.title }}</h4>
                         <p>{{ item.description }}</p>
@@ -48,25 +48,35 @@
                 <p>
                     {{ contact_me }}
                 </p>
-                <div class="contact_form">
-                    <p>
-                        {{ contact_me_2 }}
-                    </p>
-                    <ContactForm />
-                    <p>
-                        {{ contact_me_3 }}
-                    </p>
+                <div class="forms_container">
+                    <div class="contact_form">
+                        <p>
+                            {{ contact_me_2 }}
+                        </p>
+                        <ContactForm />
+                        <p>
+                            {{ contact_me_3 }}
+                        </p>
+                    </div>
+                    <div class="email_form">
+                        <p>{{ contact_me_4 }}</p>
+                        <a :href="'mailto:' + email">{{ email }}</a>
+                        <div class="social_media">
+                            <p>
+                                {{ social_media_message }}
+                            </p>
+                            <SocialMedia />
+                        </div>
+                        <div class="final_message">
+                            <p>
+                                {{ final_message }}
+                            </p>
+                            <p>
+                                {{ final_message_2 }}
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="email_form">
-                    <p>{{ contact_me_4 }}</p>
-                    <a :href="'mailto:' + email">{{ email }}</a>
-                </div>
-                <p>
-                    {{ final_message }}
-                </p>
-                <p>
-                    {{ final_message_2 }}
-                </p>
             </section>
         </div>
     </section>
@@ -78,6 +88,7 @@ import { useViewStore } from '@/stores/views'
 import about_photo from '@/assets/images/about.jpg'
 import HomeSVG from '@/components/UI/HomeSVG.vue'
 import HomeSVG_2 from '@/components/UI/HomeSVG_2.vue'
+import SocialMedia from '@/components/UI/SocialMedia.vue'
 import ContactForm from '../components/ContactForm.vue'
 
 const viewStore = useViewStore()
@@ -86,7 +97,7 @@ const views = viewStore.views
 const about_description =
     "Hello! I'm Iuliia, a passionate self-taught videographer. I'm fascinated by the process of transforming ideas into cinematographic meaningful stories that inspire people and leave a lasting impact. I create short films, product videos, and Reels. My films convey a wide range of emotions, from love and hope to dreams and deep thoughts, all woven into the story. My permanent residence is in Berlin, Germany, but also I love to travel and shoot in other cities and countries."
 const about_aesthetics =
-    'My favourite style is “elegant-classy” or “romantic-nostalgic.” If I were to describe it in words- its something about the set up in beautiful location, golden light, dreamy or dramatic mood, red lipstick, little black dress. …And I am always up for experiments!'
+    "My favourite style is “elegant-classy” or “romantic-nostalgic.” If I were to describe it in words - it's something about the set up in beautiful location, golden light, dreamy or dramatic mood, red lipstick, little black dress. I am always up for experiments!"
 
 const services_description =
     'Looking for a videographer for your next project? I offer a range of services, including:'
@@ -119,9 +130,11 @@ const contact_me_2 = 'Feel free to reach out via Contact Form'
 
 const contact_me_3 = 'P.S. It goes straight to email box, and I read it every day!'
 
-const contact_me_4 = 'You can also drop me an email'
+const contact_me_4 = 'Drop me an email'
 
 const email = 'iu.matiash@gmail.com'
+
+const social_media_message = 'You can also find me on social media:'
 
 const final_message = "Let's create unforgettable films together!"
 
@@ -210,12 +223,15 @@ const final_message_2 = 'Thank you for visiting my portfolio.'
 
         .services {
             ul {
+                display: flex;
                 list-style: none;
-                margin: 0;
+                margin-top: 2rem;
                 padding: 0;
+                text-align: justify;
 
                 li {
-                    margin: 0;
+                    width: 25%;
+                    margin-right: 1rem;
                     padding: 0;
 
                     h4 {
@@ -228,8 +244,40 @@ const final_message_2 = 'Thank you for visiting my portfolio.'
         }
 
         .contact {
-            .contact_form {
-                width: 70%;
+            background-color: var(--light-gray);
+
+            p {
+                font-size: 1.1rem;
+            }
+
+            .forms_container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .contact_form {
+                    width: 50%;
+                }
+
+                .email_form {
+                    width: 50%;
+
+                    a {
+                        color: var(--dark-accent);
+                        text-decoration: none;
+                        font-size: 1.3rem;
+                        font-weight: 400;
+                        margin-bottom: 3rem;
+                    }
+
+                    .social_media {
+                        margin-top: 2rem;
+                    }
+
+                    .final_message {
+                        margin-top: 2rem;
+                    }
+                }
             }
         }
     }
