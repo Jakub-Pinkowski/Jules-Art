@@ -175,7 +175,6 @@ const email = 'iu.matiash@gmail.com'
             .photo {
                 justify-content: center;
                 text-align: center;
-
                 width: 50%;
                 height: 100%;
                 position: relative;
@@ -379,19 +378,21 @@ const email = 'iu.matiash@gmail.com'
 @media screen and (max-width: 768px) {
     .view {
         margin: 0;
+
         .sections_container {
             .about {
                 flex-direction: column;
-
-                .text {
-                    width: 100%;
-                    margin-right: 0;
-                }
 
                 .photo {
                     width: 100%;
                     margin-top: 2rem;
                     margin-bottom: 2rem;
+                    order: 1;
+                }
+                .text {
+                    width: 100%;
+                    margin-right: 0;
+                    order: 2;
                 }
             }
 
@@ -440,6 +441,8 @@ const email = 'iu.matiash@gmail.com'
             }
 
             .services {
+                margin-top: 2rem;
+                margin-bottom: 2rem;
                 flex-direction: column;
 
                 .text {
@@ -466,6 +469,8 @@ const email = 'iu.matiash@gmail.com'
             }
 
             .contact {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
