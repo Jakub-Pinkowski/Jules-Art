@@ -3,23 +3,28 @@
         <h1>Jules-Art</h1>
         <h2>Videography & Photography</h2>
         <div class="sections_container">
-            <section class="about">
+            <section class="about main_section">
                 <section class="text">
-                    <h3>About me</h3>
-                    <p>
-                        {{ about_description }}
-                    </p>
-                    <h3>Films, Style & Aesthetics</h3>
-                    <p>
-                        {{ about_aesthetics }}
-                    </p>
+                    <div class="about_me">
+                        <h3>About me</h3>
+                        <p>
+                            {{ about_description }}
+                        </p>
+                    </div>
+                    <div class="aesthetics">
+                        <h3>Films, Style & Aesthetics</h3>
+                        <p>
+                            {{ about_aesthetics }}
+                        </p>
+                    </div>
                 </section>
                 <section class="photo">
                     <img :src="about_photo" alt="about photo" />
                     <HomeSVG strokeColor="var(--dark-accent, #4e4e50)" />
+                    <HomeSVG_2 strokeColor="var(--dark-accent, #4e4e50)" />
                 </section>
             </section>
-            <section class="portfolio">
+            <section class="portfolio main_section">
                 <h3>Portfolio Highlights</h3>
                 <ul class="portfolio_list">
                     <li v-for="view in views">
@@ -31,49 +36,38 @@
                     </li>
                 </ul>
             </section>
-            <section class="services">
-                <h3>Services</h3>
-                <p>
-                    {{ services_description }}
-                </p>
-                <ul class="services_list">
-                    <li v-for="item in services">
-                        <h4>{{ item.title }}</h4>
-                        <p>{{ item.description }}</p>
-                    </li>
-                </ul>
-            </section>
-            <section class="contact">
-                <h3>Contact me</h3>
-                <p>
-                    {{ contact_me }}
-                </p>
-                <div class="forms_container">
-                    <div class="contact_form">
-                        <p>
-                            {{ contact_me_2 }}
-                        </p>
-                        <ContactForm />
-                        <p>
-                            {{ contact_me_3 }}
-                        </p>
-                    </div>
-                    <div class="email_form">
-                        <p>{{ contact_me_4 }}</p>
-                        <a :href="'mailto:' + email">{{ email }}</a>
-                        <div class="social_media">
-                            <p>
-                                {{ social_media_message }}
-                            </p>
-                            <SocialMedia />
+            <section class="contact_services main_section">
+                <section class="services">
+                    <h3>Services</h3>
+                    <p>
+                        {{ services_description }}
+                    </p>
+                    <ul class="services_list">
+                        <li v-for="item in services">
+                            <h4>{{ item.title }}</h4>
+                            <p>{{ item.description }}</p>
+                        </li>
+                    </ul>
+                </section>
+                <div class="contact">
+                    <h3>Contact me</h3>
+                    <p>
+                        Ready to collaborate? I'd love to hear about your project and how we can
+                        bring it to life
+                    </p>
+                    <div class="forms_container">
+                        <div class="contact_form">
+                            <span
+                                >P.S. It goes straight to email box, and I read it every day!</span
+                            >
+                            <ContactForm />
                         </div>
-                        <div class="final_message">
-                            <p>
-                                {{ final_message }}
-                            </p>
-                            <p>
-                                {{ final_message_2 }}
-                            </p>
+                        <div class="email_form">
+                            <p>You can also drop me an email or connect via Social Media</p>
+                            <a :href="'mailto:' + email">{{ email }}</a>
+                            <div class="social_media">
+                                <SocialMedia />
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,38 +117,39 @@ const services = [
     },
 ]
 
-const contact_me =
-    "Ready to collaborate? I'd love to hear about your project and how we can bring it to life."
-
-const contact_me_2 = 'Feel free to reach out via Contact Form'
-
-const contact_me_3 = 'P.S. It goes straight to email box, and I read it every day!'
-
-const contact_me_4 = 'Drop me an email'
-
 const email = 'iu.matiash@gmail.com'
-
-const social_media_message = 'You can also find me on social media:'
-
-const final_message = "Let's create unforgettable films together!"
-
-const final_message_2 = 'Thank you for visiting my portfolio.'
 </script>
 
 <style scoped lang="scss">
 .view {
-    p {
-        margin-bottom: 1rem;
+    margin: 0;
+
+    h1,
+    h2 {
+        margin: 1rem 2rem;
     }
+
     .sections_container {
+        .main_section {
+            margin: 1rem 2rem;
+        }
         .about {
             display: flex;
+            margin-bottom: 0;
 
             .text {
                 width: 50%;
                 text-align: justify;
                 text-justify: inter-word;
                 margin-right: 2rem;
+
+                .about_me {
+                    margin-bottom: 2rem;
+                }
+
+                .aesthetics {
+                    margin-bottom: 2rem;
+                }
             }
 
             .photo {
@@ -176,9 +171,12 @@ const final_message_2 = 'Thank you for visiting my portfolio.'
 
         .portfolio {
             background-color: var(--light-gray);
+            margin: 0;
+            padding-top: 1rem;
 
             h3 {
                 margin-bottom: 2rem;
+                margin-left: 2rem;
             }
 
             .portfolio_list {
@@ -221,61 +219,58 @@ const final_message_2 = 'Thank you for visiting my portfolio.'
             }
         }
 
-        .services {
-            ul {
-                display: flex;
-                list-style: none;
-                margin-top: 2rem;
-                padding: 0;
+        .contact_services {
+            display: flex;
+            .services {
+                width: 50%;
                 text-align: justify;
 
-                li {
-                    width: 25%;
-                    margin-right: 1rem;
+                ul {
+                    list-style: disc;
+                    margin-top: 2rem;
+                    margin-right: 2rem;
                     padding: 0;
 
-                    h4 {
-                        font-size: 1.3rem;
-                        font-weight: 400;
-                        margin: 0;
+                    li {
+                        margin-right: 1rem;
+                        align-items: center;
                     }
                 }
             }
-        }
 
-        .contact {
-            background-color: var(--light-gray);
+            .contact {
+                width: 50%;
 
-            p {
-                font-size: 1.1rem;
-            }
+                .forms_container {
+                    justify-content: center;
+                    align-items: center;
 
-            .forms_container {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .contact_form {
-                    width: 50%;
-                }
-
-                .email_form {
-                    width: 50%;
-
-                    a {
-                        color: var(--dark-accent);
-                        text-decoration: none;
-                        font-size: 1.3rem;
-                        font-weight: 400;
-                        margin-bottom: 3rem;
+                    .contact_form {
+                        span {
+                            font-size: 1rem;
+                            font-weight: 300;
+                            margin: 0;
+                        }
                     }
 
-                    .social_media {
-                        margin-top: 2rem;
-                    }
+                    .email_form {
+                        margin-top: 1rem;
 
-                    .final_message {
-                        margin-top: 2rem;
+                        a {
+                            color: var(--dark-accent);
+                            text-decoration: none;
+                            font-size: 1.3rem;
+                            font-weight: 400;
+                            margin-bottom: 3rem;
+                        }
+
+                        .social_media {
+                            margin-top: 1rem;
+                        }
+
+                        .final_message {
+                            margin-top: 2rem;
+                        }
                     }
                 }
             }

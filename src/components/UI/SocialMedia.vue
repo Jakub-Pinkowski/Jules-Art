@@ -21,5 +21,10 @@ const link_tiktok = 'https://www.tiktok.com/@julesmatiasart?lang=en'
     width: 3rem;
     height: 3rem;
     margin-right: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+
+.icon:hover {
+    transform: scale(1.1);
 }
 </style>

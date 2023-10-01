@@ -77,7 +77,7 @@ p {
     color: var(--dark-gray);
     font-size: 1.3rem;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .view {
