@@ -1,35 +1,26 @@
 <template>
     <section class="view">
         <h1>Jules-Art</h1>
-        <section class="choice-container">
-            <div
-                class="choice"
-                v-for="(view, index) in views.slice(0, views.length - 1)"
-                :key="view.name"
-            >
-                <h3>{{ view.description }}</h3>
-                <router-link :to="view.route">
-                    <img :src="view.image" :alt="view.name" />
-                </router-link>
-            </div>
-        </section>
-        <section class="about">
-            <h2>About me</h2>
-            <div class="about_description">
-                <section class="photo">
-                    <img :src="about_photo" alt="artist-photo" />
+        <h2>Videography & Photography</h2>
+        <div class="main_grid">
+            <section class="about">
+                <h2>About me</h2>
+                <section class="description">
+                    <p>
+                        {{ description }}
+                    </p>
                 </section>
-                <section class="text">
-                    <section>
-                        <h3>{{ about_title }}</h3>
-                        <p>
-                            {{ description }}
-                        </p>
-                    </section>
-                    <ContactForm />
+                <h2>Films, Style & Aesthetics</h2>
+                <section class="aesthetics">
+                    <p>
+                        {{ aesthetics }}
+                    </p>
                 </section>
-            </div>
-        </section>
+            </section>
+            <section class="portfolio"></section>
+            <section class="services"></section>
+            <ContactForm class="contact" />
+        </div>
     </section>
 </template>
 
@@ -42,82 +33,48 @@ import ContactForm from '../components/ContactForm.vue'
 const viewStore = useViewStore()
 const views = viewStore.views
 
-const about_title = 'Artistic soul. Berlin.'
 const description =
-    "Photography is my passion and I would like to share my best work here. I am interested in traveling, aesthetics, and fashion photography. Recently, I've started diving into videography and I hope to share my first work soon. I will be happy to work on interesting projects and welcome all creative souls to reach out to me via social platforms or the form below."
+    "Hello! I'm Iuliia, a passionate self-taught videographer. I'm fascinated by the process of transforming ideas into cinematographic meaningful stories that inspire people and leave a lasting impact. I create short films, product videos, and Reels. My films convey a wide range of emotions, from love and hope to dreams and deep thoughts, all woven into the story. My permanent residence is in Berlin, Germany, but also I love to travel and shoot in other cities and countries."
+const aesthetics =
+    'My favourite style is “elegant-classy” or “romantic-nostalgic.” If I were to describe it in words- its something about the set up in beautiful location, golden light, dreamy or dramatic mood, red lipstick, little black dress. …And I am always up for experiments!'
+
+
 </script>
 
 <style scoped lang="scss">
 .view {
-    .choice-container {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        justify-content: center;
-        align-items: space-between;
+    .main_grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            'about portfolio'
+            'services contact';
+        grid-gap: 2rem;
+        margin-top: 2rem;
 
-        .choice {
-            flex: 0 0 calc(33% - 4rem);
-            height: 100%;
-            margin: 2rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .about {
+            grid-area: about;
 
-            img {
-                width: 100%;
-                height: auto;
-                border-radius: 5%;
-                filter: brightness(80%);
-                transition: all 0.3s ease-in-out;
-                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-                    0 3px 6px rgba(0, 0, 0, 0.23);
+            .description {
+                margin-bottom: 2rem;
             }
 
-            img:hover {
-                filter: brightness(100%);
-                transform: scale(1.05);
-                cursor: pointer;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3),
-                    0 6px 20px rgba(0, 0, 0, 0.22);
+            .aesthetics {
+                margin-bottom: 2rem;
             }
         }
-    }
 
-    .about {
-        margin-top: 2rem;
-        .about_description {
-            margin: 2rem;
-            display: flex;
-            flex-direction: row;
-            .photo {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-right: 2rem;
+        .portfolio {
+            grid-area: portfolio;
+        }
 
-                img {
-                    width: 500px;
-                    height: auto;
-                    border-radius: 3%;
-                }
-            }
+        .services {
+            grid-area: services;
+        }
 
-            .text {
-                margin-right: 2rem;
-                display: flex;
-                flex-direction: column;
-                text-align: justify;
-
-                h3 {
-                    margin-bottom: 1rem;
-                }
-
-                p {
-                    margin-bottom: 1rem;
-                }
-            }
+        .contact {
+            grid-area: contact;
         }
     }
 }
