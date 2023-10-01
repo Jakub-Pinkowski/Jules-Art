@@ -32,23 +32,32 @@
                         <router-link :to="view.route">
                             <img :src="view.image" :alt="view.name" />
                         </router-link>
+                        <router-link :to="view.route">
+                            <button class="btn btn-sm">View</button>
+                        </router-link>
                     </li>
                 </ul>
             </section>
             <section class="services main_section">
-                <h3>Services</h3>
-                <p>
-                    {{ services_description }}
-                </p>
-                <ul class="services_list">
-                    <li v-for="item in services">
-                        <div class="service-item">
-                            <i class="fa-solid fa-caret-right"></i>
-                            <h4>{{ item.title }}</h4>
-                        </div>
-                        <p>{{ item.description }}</p>
-                    </li>
-                </ul>
+                <section class="text">
+                    <h3>Services</h3>
+                    <p>
+                        {{ services_description }}
+                    </p>
+                    <ul class="services_list">
+                        <li v-for="item in services">
+                            <div class="service-item">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <h4>{{ item.title }}</h4>
+                            </div>
+                            <p>{{ item.description }}</p>
+                        </li>
+                    </ul>
+                </section>
+                <section class="photos">
+                    <img :src="service_photo_1" alt="service photo 1" />
+                    <img :src="service_photo_2" alt="service photo 2" />
+                </section>
             </section>
             <section class="contact main_section">
                 <div class="contact_container">
@@ -82,6 +91,10 @@
 import { useViewStore } from '@/stores/views'
 
 import about_photo from '@/assets/images/about.jpg'
+import service_photo_1 from '@/assets/images/services_1.jpg'
+import service_photo_2 from '@/assets/images/services_2.jpg'
+import service_photo_3 from '@/assets/images/services_3.jpg'
+
 import HomeSVG from '@/components/UI/HomeSVG.vue'
 import HomeSVG_2 from '@/components/UI/HomeSVG_2.vue'
 import SocialMedia from '@/components/UI/SocialMedia.vue'
@@ -132,6 +145,8 @@ const email = 'iu.matiash@gmail.com'
     }
 
     .sections_container {
+        margin-top: 3rem;
+
         .main_section {
             margin: 1rem 2rem;
         }
@@ -199,6 +214,22 @@ const email = 'iu.matiash@gmail.com'
                     height: 100%;
                     padding: 1rem;
 
+                    button {
+                        background-color: var(--light-gray);
+                        margin-top: 3rem;
+                        width: 200px;
+                        border: 1px solid var(--dark-accent);
+                        color: var(--main-bg-color);
+                        transition: background-color 0.5s ease;
+                        transition: transform 0.3s ease-in-out;
+                    }
+
+                    button:hover {
+                        border: 1px solid var(--dark-accent);
+                        background-color: var(--light-accent);
+                        transform: scale(1.1);
+                    }
+
                     img {
                         width: 100%;
                         height: auto;
@@ -221,40 +252,57 @@ const email = 'iu.matiash@gmail.com'
         .services {
             margin-top: 5rem;
             margin-bottom: 5rem;
-            width: 50%;
+            display: flex;
             text-align: justify;
 
-            ul {
-                list-style: none;
-                margin-top: 2rem;
-                margin-right: 2rem;
-                padding: 0;
-
-                li {
-                    margin-right: 1rem;
+            .text {
+                ul {
+                    list-style: none;
                     margin-top: 2rem;
-                    align-items: center;
+                    margin-right: 2rem;
+                    padding: 0;
 
-                    .service-item {
-                        display: flex;
-                        align-items: center;
+                    li {
                         margin-right: 1rem;
                         margin-top: 2rem;
-                        margin-bottom: 0.5rem;
+                        align-items: center;
 
-                        i {
-                            font-size: 1.5rem;
+                        .service-item {
+                            display: flex;
+                            align-items: center;
                             margin-right: 1rem;
-                        }
+                            margin-top: 2rem;
+                            margin-bottom: 0.5rem;
 
-                        h4 {
-                            margin: 0;
-                        }
+                            i {
+                                font-size: 1.5rem;
+                                margin-right: 1rem;
+                            }
 
-                        p {
-                            font-size: 1.2rem;
+                            h4 {
+                                margin: 0;
+                            }
+
+                            p {
+                                font-size: 1.2rem;
+                            }
                         }
                     }
+                }
+            }
+
+            .photos {
+                width: 50%;
+                margin-top: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                img {
+                    width: 48%;
+                    height: 48%;
+                    border-radius: 5%;
+                    object-fit: cover;
                 }
             }
         }
