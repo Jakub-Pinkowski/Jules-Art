@@ -87,7 +87,7 @@ form {
     flex-direction: column;
 
     .input-container {
-        width: 70%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
     }
@@ -97,7 +97,7 @@ form {
     }
 
     textarea {
-        width: 70%;
+        width: 100%;
     }
 
     input,

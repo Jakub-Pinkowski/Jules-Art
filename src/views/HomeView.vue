@@ -21,7 +21,6 @@
                 <section class="photo">
                     <img :src="about_photo" alt="about photo" />
                     <HomeSVG strokeColor="var(--dark-accent, #4e4e50)" />
-                    <HomeSVG_2 strokeColor="var(--dark-accent, #4e4e50)" />
                 </section>
             </section>
             <section class="portfolio main_section">
@@ -44,7 +43,10 @@
                     </p>
                     <ul class="services_list">
                         <li v-for="item in services">
-                            <h4>{{ item.title }}</h4>
+                            <div class="service-item">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <h4>{{ item.title }}</h4>
+                            </div>
                             <p>{{ item.description }}</p>
                         </li>
                     </ul>
@@ -196,10 +198,6 @@ const email = 'iu.matiash@gmail.com'
                     height: 100%;
                     padding: 1rem;
 
-                    h4 {
-                        margin-bottom: 1rem;
-                    }
-
                     img {
                         width: 100%;
                         height: auto;
@@ -226,14 +224,36 @@ const email = 'iu.matiash@gmail.com'
                 text-align: justify;
 
                 ul {
-                    list-style: disc;
+                    list-style: none;
                     margin-top: 2rem;
                     margin-right: 2rem;
                     padding: 0;
 
                     li {
                         margin-right: 1rem;
+                        margin-top: 2rem;
                         align-items: center;
+
+                        .service-item {
+                            display: flex;
+                            align-items: center;
+                            margin-right: 1rem;
+                            margin-top: 2rem;
+                            margin-bottom: 0.5rem;
+
+                            i {
+                                font-size: 1.5rem;
+                                margin-right: 1rem;
+                            }
+
+                            h4 {
+                                margin: 0;
+                            }
+
+                            p {
+                                font-size: 1.2rem;
+                            }
+                        }
                     }
                 }
             }

@@ -73,6 +73,13 @@ h3 {
     margin-bottom: 2rem;
 }
 
+h4 {
+    color: var(--dark-gray);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
 p {
     color: var(--dark-gray);
     font-size: 1.3rem;
