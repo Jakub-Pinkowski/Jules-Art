@@ -25,8 +25,9 @@
                     <li v-for="view in views">
                         <h4>{{ view.name }}</h4>
                         <p>{{ view.description }}</p>
-                        <img :src="view.image" alt="portfolio-image" />
-                        <router-link :to="view.route">View</router-link>
+                        <router-link :to="view.route">
+                            <img :src="view.image" :alt="view.name" />
+                        </router-link>
                     </li>
                 </ul>
             </section>
@@ -44,7 +45,28 @@
             </section>
             <section class="contact">
                 <h3>Contact me</h3>
-                <ContactForm />
+                <p>
+                    {{ contact_me }}
+                </p>
+                <div class="contact_form">
+                    <p>
+                        {{ contact_me_2 }}
+                    </p>
+                    <ContactForm />
+                    <p>
+                        {{ contact_me_3 }}
+                    </p>
+                </div>
+                <div class="email_form">
+                    <p>{{ contact_me_4 }}</p>
+                    <a :href="'mailto:' + email">{{ email }}</a>
+                </div>
+                <p>
+                    {{ final_message }}
+                </p>
+                <p>
+                    {{ final_message_2 }}
+                </p>
             </section>
         </div>
     </section>
@@ -89,10 +111,28 @@ const services = [
             'if you have existing footage, I can edit it into a polished, professional video.',
     },
 ]
+
+const contact_me =
+    "Ready to collaborate? I'd love to hear about your project and how we can bring it to life."
+
+const contact_me_2 = 'Feel free to reach out via Contact Form'
+
+const contact_me_3 = 'P.S. It goes straight to email box, and I read it every day!'
+
+const contact_me_4 = 'You can also drop me an email'
+
+const email = 'iu.matiash@gmail.com'
+
+const final_message = "Let's create unforgettable films together!"
+
+const final_message_2 = 'Thank you for visiting my portfolio.'
 </script>
 
 <style scoped lang="scss">
 .view {
+    p {
+        margin-bottom: 1rem;
+    }
     .sections_container {
         .about {
             display: flex;
@@ -113,8 +153,8 @@ const services = [
                 position: relative;
 
                 img {
-                    width: 60%;
-                    height: 60%;
+                    width: 65%;
+                    height: 65%;
                     border-radius: 50%;
                     object-fit: cover;
                 }
@@ -122,8 +162,10 @@ const services = [
         }
 
         .portfolio {
+            background-color: var(--light-gray);
+
             h3 {
-                margin: 0;
+                margin-bottom: 2rem;
             }
 
             .portfolio_list {
@@ -144,18 +186,23 @@ const services = [
                     padding: 1rem;
 
                     h4 {
-                        margin: 0;
+                        margin-bottom: 1rem;
                     }
 
                     img {
                         width: 100%;
                         height: auto;
-                        margin: 1rem 0;
+                        border-radius: 5%;
+                        filter: brightness(80%);
+                        transition: all 0.3s ease-in-out;
+                        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
                     }
 
-                    a {
-                        text-decoration: none;
-                        color: var(--dark-gray);
+                    img:hover {
+                        filter: brightness(100%);
+                        transform: scale(1.05);
+                        cursor: pointer;
+                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.22);
                     }
                 }
             }
@@ -179,14 +226,14 @@ const services = [
                 }
             }
         }
+
+        .contact {
+            .contact_form {
+                width: 70%;
+            }
+        }
     }
 }
 
 /* Mobile */
-
-@media screen and (max-width: 768px) {
-    .main_grid {
-        grid-template-columns: 1fr; /* Single column for mobile */
-    }
-}
 </style>
