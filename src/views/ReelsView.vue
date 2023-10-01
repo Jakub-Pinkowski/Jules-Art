@@ -28,7 +28,7 @@
                 :modules="modules"
                 class="mySwiper"
             >
-                <swiper-slide v-for="reel in reels">
+                <swiper-slide v-for="reel in reels" :key="reel.name">
                     <video
                         class="rounded"
                         :src="reel.src"
@@ -209,6 +209,13 @@ const handleTouchEnd = (evt: TouchEvent) => {
 
 <style scoped lang="scss">
 .view {
+    padding: 1rem 0;
+    margin: 0;
+
+    h1 {
+        margin: 1rem 2rem;
+    }
+
     /* Desktop vs Mobile */
     .desktop {
         display: block;
@@ -242,7 +249,7 @@ const handleTouchEnd = (evt: TouchEvent) => {
             img,
             video {
                 display: block;
-                width: 100%;
+                width: 90%;
                 height: auto;
                 transition: filter 0.3s ease-out;
             }
