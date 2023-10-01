@@ -60,7 +60,10 @@
                 </section>
             </section>
             <section class="contact main_section">
-                <div class="contact_container">
+                <div class="photo">
+                    <img :src="contact_photo" alt="contact photo" />
+                </div>
+                <section class="contact_container">
                     <h3>Contact me</h3>
                     <p>
                         Ready to collaborate? I'd love to hear about your project and how we can
@@ -81,7 +84,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </section>
         </div>
     </section>
@@ -94,6 +97,7 @@ import about_photo from '@/assets/images/about.jpg'
 // TODO: Update photos with some real ones from Julia's gallery
 import service_photo_1 from '@/assets/images/services_1.jpg'
 import service_photo_2 from '@/assets/images/services_2.jpg'
+import contact_photo from '@/assets/images/contact.jpg'
 
 import HomeSVG from '@/components/UI/HomeSVG.vue'
 import SocialMedia from '@/components/UI/SocialMedia.vue'
@@ -308,11 +312,13 @@ const email = 'iu.matiash@gmail.com'
 
         .contact {
             background-color: var(--light-gray);
+            display: flex;
             margin: 0;
             padding-top: 5rem;
             padding-bottom: 5rem;
 
             .contact_container {
+                width: 50%;
                 margin-bottom: 2rem;
                 margin-left: 2rem;
 
@@ -347,6 +353,21 @@ const email = 'iu.matiash@gmail.com'
                             margin-top: 2rem;
                         }
                     }
+                }
+            }
+
+            .photo {
+                width: 50%;
+                margin-top: 2rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                img {
+                    width: 90%;
+                    height: auto;
+                    border-radius: 5%;
+                    object-fit: cover;
                 }
             }
         }

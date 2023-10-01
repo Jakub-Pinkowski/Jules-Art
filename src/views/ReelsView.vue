@@ -101,6 +101,9 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
+// TODO: Reels shoudl scroll infinitely
+// TODO: The page should open with reel in the middle and two other on the sides
+
 // Import data from store
 const reelsStore = useReelsStore()
 const reels = reelsStore.reels
@@ -110,9 +113,7 @@ const modules = [Navigation]
 
 // Apply inactive classes to videos
 const onSlideChangeTransitionEnd = (swiper: any) => {
-    const videos = Array.from(
-        document.querySelectorAll('.desktop video')
-    ) as HTMLVideoElement[]
+    const videos = Array.from(document.querySelectorAll('.desktop video')) as HTMLVideoElement[]
     videos.forEach((video, index) => {
         if (index === swiper.activeIndex) {
             video.classList.remove('inactive')
@@ -128,9 +129,7 @@ const onSlideChangeTransitionEnd = (swiper: any) => {
 }
 // Apply inactive classes to all the videos except the first one when page loads
 onMounted(() => {
-    const videos = Array.from(
-        document.querySelectorAll('.desktop video')
-    ) as HTMLVideoElement[]
+    const videos = Array.from(document.querySelectorAll('.desktop video')) as HTMLVideoElement[]
     videos.forEach((video, index) => {
         if (index === 0) {
             video.classList.remove('transition')
