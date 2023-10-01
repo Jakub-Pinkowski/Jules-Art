@@ -35,23 +35,23 @@
                     </li>
                 </ul>
             </section>
-            <section class="contact_services main_section">
-                <section class="services">
-                    <h3>Services</h3>
-                    <p>
-                        {{ services_description }}
-                    </p>
-                    <ul class="services_list">
-                        <li v-for="item in services">
-                            <div class="service-item">
-                                <i class="fa-solid fa-caret-right"></i>
-                                <h4>{{ item.title }}</h4>
-                            </div>
-                            <p>{{ item.description }}</p>
-                        </li>
-                    </ul>
-                </section>
-                <div class="contact">
+            <section class="services main_section">
+                <h3>Services</h3>
+                <p>
+                    {{ services_description }}
+                </p>
+                <ul class="services_list">
+                    <li v-for="item in services">
+                        <div class="service-item">
+                            <i class="fa-solid fa-caret-right"></i>
+                            <h4>{{ item.title }}</h4>
+                        </div>
+                        <p>{{ item.description }}</p>
+                    </li>
+                </ul>
+            </section>
+            <section class="contact main_section">
+                <div class="contact_container">
                     <h3>Contact me</h3>
                     <p>
                         Ready to collaborate? I'd love to hear about your project and how we can
@@ -174,7 +174,8 @@ const email = 'iu.matiash@gmail.com'
         .portfolio {
             background-color: var(--light-gray);
             margin: 0;
-            padding-top: 1rem;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
 
             h3 {
                 margin-bottom: 2rem;
@@ -217,49 +218,56 @@ const email = 'iu.matiash@gmail.com'
             }
         }
 
-        .contact_services {
-            display: flex;
-            .services {
-                width: 50%;
-                text-align: justify;
+        .services {
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+            width: 50%;
+            text-align: justify;
 
-                ul {
-                    list-style: none;
+            ul {
+                list-style: none;
+                margin-top: 2rem;
+                margin-right: 2rem;
+                padding: 0;
+
+                li {
+                    margin-right: 1rem;
                     margin-top: 2rem;
-                    margin-right: 2rem;
-                    padding: 0;
+                    align-items: center;
 
-                    li {
+                    .service-item {
+                        display: flex;
+                        align-items: center;
                         margin-right: 1rem;
                         margin-top: 2rem;
-                        align-items: center;
+                        margin-bottom: 0.5rem;
 
-                        .service-item {
-                            display: flex;
-                            align-items: center;
+                        i {
+                            font-size: 1.5rem;
                             margin-right: 1rem;
-                            margin-top: 2rem;
-                            margin-bottom: 0.5rem;
+                        }
 
-                            i {
-                                font-size: 1.5rem;
-                                margin-right: 1rem;
-                            }
+                        h4 {
+                            margin: 0;
+                        }
 
-                            h4 {
-                                margin: 0;
-                            }
-
-                            p {
-                                font-size: 1.2rem;
-                            }
+                        p {
+                            font-size: 1.2rem;
                         }
                     }
                 }
             }
+        }
 
-            .contact {
-                width: 50%;
+        .contact {
+            background-color: var(--light-gray);
+            margin: 0;
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+
+            .contact_container {
+                margin-bottom: 2rem;
+                margin-left: 2rem;
 
                 .forms_container {
                     justify-content: center;
