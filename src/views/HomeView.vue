@@ -91,12 +91,11 @@
 import { useViewStore } from '@/stores/views'
 
 import about_photo from '@/assets/images/about.jpg'
+// TODO: Update photos with some real ones from Julia's gallery
 import service_photo_1 from '@/assets/images/services_1.jpg'
 import service_photo_2 from '@/assets/images/services_2.jpg'
-import service_photo_3 from '@/assets/images/services_3.jpg'
 
 import HomeSVG from '@/components/UI/HomeSVG.vue'
-import HomeSVG_2 from '@/components/UI/HomeSVG_2.vue'
 import SocialMedia from '@/components/UI/SocialMedia.vue'
 import ContactForm from '../components/ContactForm.vue'
 
@@ -300,7 +299,7 @@ const email = 'iu.matiash@gmail.com'
 
                 img {
                     width: 48%;
-                    height: 48%;
+                    height: auto;
                     border-radius: 5%;
                     object-fit: cover;
                 }
