@@ -23,6 +23,7 @@
 </template>
 
 <script setup lang="ts">
+// TODO: Update photos with some real ones from Julia's gallery
 import service_photo_1 from '@/assets/images/services_1.jpg'
 import service_photo_2 from '@/assets/images/services_2.jpg'
 
@@ -53,8 +54,7 @@ const services = [
 
 <style scoped lang="scss">
 .services {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin: 5rem 2rem;
     display: flex;
     text-align: justify;
 
