@@ -13,7 +13,7 @@ export const useViewStore = defineStore({
                 name: 'Photos',
                 route: '/photos',
                 image: view_photos,
-                description: 'Explore my photos colection',
+                description: 'Explore a colection of photos',
             },
             {
                 name: 'Videos',

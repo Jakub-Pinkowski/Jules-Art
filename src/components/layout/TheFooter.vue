@@ -4,14 +4,10 @@
             class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top footer mt-auto"
         >
             <div id="footer-data" class="col-md-4 d-flex">
-                <span class="mb-md-0 text-body-secondary"
-                    >&copy; 2023 Jakub Pinkowski
-                </span>
+                <span class="mb-md-0 text-body-secondary">&copy; 2023 Jakub Pinkowski </span>
             </div>
 
-            <ul
-                class="nav col-md-4 justify-content-end list-unstyled d-flex align-items-center"
-            >
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex align-items-center">
                 <li class="ms-3">
                     <a class="text-body-secondary" :href="link_github">
                         <svg class="bi" width="24" height="24">
