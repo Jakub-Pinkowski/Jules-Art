@@ -4,13 +4,13 @@
             <div class="about_me">
                 <h3>About me</h3>
                 <p>
-                    {{ about_description }}
+                    {{ description }}
                 </p>
             </div>
             <div class="aesthetics">
                 <h3>Films, Style & Aesthetics</h3>
                 <p>
-                    {{ about_aesthetics }}
+                    {{ aesthetics }}
                 </p>
             </div>
         </section>
@@ -25,9 +25,9 @@
 import about_photo from '@/assets/images/about.jpg'
 import HomeSVG from '@/components/UI/HomeSVG.vue'
 
-const about_description =
+const description =
     "Hello! I'm Iuliia, a passionate self-taught videographer. I'm fascinated by the process of transforming ideas into cinematographic meaningful stories that inspire people and leave a lasting impact. I create short films, product videos, and Reels. My films convey a wide range of emotions, from love and hope to dreams and deep thoughts, all woven into the story. My permanent residence is in Berlin, Germany, but also I love to travel and shoot in other cities and countries."
-const about_aesthetics =
+const aesthetics =
     "My favourite style is “elegant-classy” or “romantic-nostalgic.” If I were to describe it in words - it's something about the set up in beautiful location, golden light, dreamy or dramatic mood, red lipstick, little black dress. I am always up for experiments!"
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-    <nav role="navigation" class="">
+    <nav role="navigation">
         <div id="menuToggle">
             <input type="checkbox" ref="checkbox" />
             <span></span>

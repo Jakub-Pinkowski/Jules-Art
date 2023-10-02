@@ -45,14 +45,14 @@ const link_github = 'https://github.com/Jakub-Pinkowski'
 const link_linkedin = 'https://www.linkedin.com/in/jakub-pinkowski-b44405134/'
 </script>
 
-<style scoped>
-.bi {
-    vertical-align: -0.125em;
-    fill: currentColor;
-}
-
+<style scoped lang="scss">
 .footer {
     margin-top: auto;
     margin-bottom: 0;
+
+    .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+    }
 }
 </style>

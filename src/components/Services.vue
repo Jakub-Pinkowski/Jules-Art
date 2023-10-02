@@ -3,7 +3,7 @@
         <section class="text">
             <h3>Services</h3>
             <p>
-                {{ services_description }}
+                {{ description }}
             </p>
             <ul class="services_list">
                 <li v-for="item in services">
@@ -27,7 +27,7 @@
 import service_photo_1 from '@/assets/images/services_1.jpg'
 import service_photo_2 from '@/assets/images/services_2.jpg'
 
-const services_description =
+const description =
     'Looking for a videographer for your next project? I offer a range of services, including:'
 
 const services = [
