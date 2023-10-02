@@ -28,7 +28,7 @@
                 :modules="modules"
                 class="mySwiper"
             >
-                <swiper-slide v-for="reel in reels" :key="reel.name">
+                <swiper-slide v-for="reel in reversedReels" :key="reel.name">
                     <video
                         class="rounded"
                         :src="reel.src"
@@ -55,7 +55,7 @@
                 <!-- Indicators -->
                 <div class="carousel-indicators">
                     <button
-                        v-for="(reel, index) in reels"
+                        v-for="(reel, index) in reversedReels"
                         :key="index"
                         type="button"
                         :class="{ active: index === activeIndex }"
@@ -68,7 +68,7 @@
                 <div class="carousel-inner">
                     <!-- Single item -->
                     <div
-                        v-for="(reel, index) in reels"
+                        v-for="(reel, index) in reversedReels"
                         :key="reel.name"
                         class="carousel-item"
                         :class="{ active: index === activeIndex }"
@@ -107,6 +107,7 @@ import 'swiper/css/navigation'
 // Import data from store
 const reelsStore = useReelsStore()
 const reels = reelsStore.reels
+const reversedReels = reels.slice().reverse()
 
 // Desktop
 const modules = [Navigation]

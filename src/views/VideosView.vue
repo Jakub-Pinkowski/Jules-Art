@@ -2,7 +2,7 @@
     <section class="view">
         <h1>Videos</h1>
         <div class="video_container">
-            <div class="video" v-for="video in videos" :key="video.name">
+            <div class="video" v-for="video in reversedVideos" :key="video.name">
                 <video
                     :src="video.src"
                     :poster="video.poster"
@@ -20,6 +20,7 @@ import { useVideoStore } from '@/stores/videos'
 
 const videoStore = useVideoStore()
 const videos = videoStore.videos
+const reversedVideos = videos.slice().reverse()
 </script>
 
 <style scoped lang="scss">
