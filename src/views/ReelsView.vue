@@ -250,7 +250,7 @@ const handleTouchEnd = (evt: TouchEvent) => {
             img,
             video {
                 display: block;
-                width: 90%;
+                width: 84%;
                 height: auto;
                 transition: filter 0.3s ease-out;
             }
