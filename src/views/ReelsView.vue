@@ -261,6 +261,7 @@ const handleTouchEnd = (evt: TouchEvent) => {
             .video-text {
                 position: absolute;
                 bottom: 60px;
+                left: -24px;
                 width: 100%;
                 text-align: center;
                 color: var(--light-gray);
