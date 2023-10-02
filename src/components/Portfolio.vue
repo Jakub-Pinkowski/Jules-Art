@@ -1,5 +1,5 @@
 <template>
-    <section class="portfolio main_section">
+    <section class="portfolio">
         <h3>Portfolio Highlights</h3>
         <ul class="portfolio_list">
             <li v-for="view in views">
@@ -24,9 +24,6 @@ const views = viewStore.views
 </script>
 
 <style scoped lang="scss">
-.main_section {
-    margin: 1rem 2rem;
-}
 .portfolio {
     background-color: var(--light-gray);
     margin: 0;
