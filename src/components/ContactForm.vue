@@ -23,8 +23,8 @@
                 <textarea
                     name="message"
                     id="message"
-                    cols="20"
-                    rows="3"
+                    cols="30"
+                    rows="6"
                     placeholder="Message"
                     v-model="message"
                     required

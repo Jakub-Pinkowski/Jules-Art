@@ -15,8 +15,7 @@
                     <ContactForm />
                 </div>
                 <div class="email_form">
-                    <p>You can also drop me an email or connect via Social Media</p>
-                    <a :href="'mailto:' + email">{{ email }}</a>
+                    <p>Let's connect on Social Media</p>
                     <div class="social_media">
                         <SocialMedia />
                     </div>
@@ -31,8 +30,6 @@ import contact_photo from '@/assets/images/contact.jpg'
 
 import SocialMedia from '@/components/UI/SocialMedia.vue'
 import ContactForm from '@/components/ContactForm.vue'
-
-const email = 'iu.matiash@gmail.com'
 </script>
 
 <style scoped lang="scss">
@@ -44,7 +41,7 @@ const email = 'iu.matiash@gmail.com'
     padding-bottom: 5rem;
 
     .contact_container {
-        width: 50%;
+        width: 40%;
         margin-bottom: 2rem;
         margin-left: 2rem;
 
@@ -83,14 +80,16 @@ const email = 'iu.matiash@gmail.com'
     }
 
     .photo {
-        width: 50%;
+        width: 60%;
         margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
 
         img {
-            width: 90%;
+            width: 100%;
             height: auto;
             border-radius: 5%;
             object-fit: cover;

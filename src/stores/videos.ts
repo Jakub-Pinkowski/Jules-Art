@@ -26,7 +26,7 @@ export const useVideoStore = defineStore({
                 name: 'Jane & Inspiration',
                 src: jane,
                 poster: poster3,
-            }
+            },
         ],
     }),
 })
