@@ -55,7 +55,7 @@ const props = defineProps({
 
 <style scoped lang="scss">
 .overlay-svg {
-    stroke-width: 1px;
+    stroke-width: 2px;
     stroke: var(--dark-accent, var(--gray));
     filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.5));
     position: absolute;

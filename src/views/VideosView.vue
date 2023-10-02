@@ -1,5 +1,5 @@
 <template>
-    <section id="videos" class="view">
+    <section class="view">
         <h1>Videos</h1>
         <div class="video_container">
             <div class="video" v-for="video in videos" :key="video.name">
@@ -23,7 +23,7 @@ const videos = videoStore.videos
 </script>
 
 <style scoped lang="scss">
-#videos {
+.view {
     .video_container {
         display: flex;
         flex-direction: column;

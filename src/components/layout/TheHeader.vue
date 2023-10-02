@@ -10,9 +10,7 @@
                         <router-link class="nav-link" to="/">Home</router-link>
                     </li>
                     <li v-for="view in views" class="nav-item">
-                        <router-link class="nav-link" :to="view.route">{{
-                            view.name
-                        }}</router-link>
+                        <router-link class="nav-link" :to="view.route">{{ view.name }}</router-link>
                     </li>
                 </ul>
             </div>
@@ -21,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+import TheLogo from '@/components/UI/TheLogo.vue'
 import { useViewStore } from '@/stores/views'
 
 const viewStore = useViewStore()
