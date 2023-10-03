@@ -48,7 +48,6 @@ import TheNavigation from '@/components/layout/TheNavigation.vue'
 .body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     background-color: var(--light-bg-color);
 }
 
