@@ -22,6 +22,7 @@ import Contact from '@/components/Contact.vue'
 .view {
     margin: 0;
 
+    
     h1,
     h2 {
         margin: 1rem 2rem;
