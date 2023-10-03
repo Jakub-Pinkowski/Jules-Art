@@ -14,9 +14,9 @@
 </template>
 
 <script setup lang="ts">
-import TheHeader from '@/components/TheHeader.vue'
-import TheFooter from '@/components/TheFooter.vue'
-import TheNavigation from '@/components/TheNavigation.vue'
+import TheHeader from '@/components/layout/TheHeader.vue'
+import TheFooter from '@/components/layout/TheFooter.vue'
+import TheNavigation from '@/components/layout/TheNavigation.vue'
 </script>
 
 <style lang="scss">
@@ -48,8 +48,7 @@ import TheNavigation from '@/components/TheNavigation.vue'
 .body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    background-color: white;
+    background-color: var(--light-bg-color);
 }
 
 h1 {
@@ -68,16 +67,23 @@ h2 {
 
 h3 {
     color: var(--dark-gray);
-    font-size: 1.6rem;
+    font-size: 1.7rem;
     font-weight: 400;
     margin-bottom: 2rem;
 }
 
+h4 {
+    color: var(--dark-gray);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
 p {
     color: var(--dark-gray);
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 300;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .view {

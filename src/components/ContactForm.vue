@@ -1,13 +1,5 @@
 <template>
     <div class="contact-form">
-        <div class="social-media">
-            <a target="_blank" :href="link_fb">
-                <img :src="icon_fb" class="icon" alt="Facebook icon" />
-            </a>
-            <a target="_blank" :href="link_insta">
-                <img :src="icon_insta" class="icon" alt="Instagram icon" />
-            </a>
-        </div>
         <div class="form-container">
             <form @submit.prevent="submitForm">
                 <div class="input-container">
@@ -31,8 +23,8 @@
                 <textarea
                     name="message"
                     id="message"
-                    cols="20"
-                    rows="5"
+                    cols="30"
+                    rows="6"
                     placeholder="Message"
                     v-model="message"
                     required
@@ -47,18 +39,11 @@
 import { ref } from 'vue'
 import axios from 'axios'
 
-import icon_fb from '../assets/icons/fb_icon.svg'
-import icon_insta from '../assets/icons/insta_icon.svg'
-
-const link_fb = 'https://www.facebook.com/julesmatiasart'
-const link_insta = 'https://www.instagram.com/jules_matias/?hl=en'
-
 const name = ref('')
 const email = ref('')
 const message = ref('')
 
 const submitForm = async () => {
-
     const formData = new FormData()
 
     const url = 'https://formspree.io/f/xgejepyk'
@@ -97,18 +82,12 @@ const resetForm = () => {
     margin: 1em 0;
 }
 
-.icon {
-    width: 3rem;
-    height: 3rem;
-    margin-right: 1rem;
-}
-
 form {
     display: flex;
     flex-direction: column;
 
     .input-container {
-        width: 70%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
     }
@@ -118,7 +97,7 @@ form {
     }
 
     textarea {
-        width: 70%;
+        width: 100%;
     }
 
     input,

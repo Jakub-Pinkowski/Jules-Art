@@ -28,7 +28,7 @@
                 :modules="modules"
                 class="mySwiper"
             >
-                <swiper-slide v-for="reel in reels">
+                <swiper-slide v-for="reel in reversedReels" :key="reel.name">
                     <video
                         class="rounded"
                         :src="reel.src"
@@ -55,7 +55,7 @@
                 <!-- Indicators -->
                 <div class="carousel-indicators">
                     <button
-                        v-for="(reel, index) in reels"
+                        v-for="(reel, index) in reversedReels"
                         :key="index"
                         type="button"
                         :class="{ active: index === activeIndex }"
@@ -68,7 +68,7 @@
                 <div class="carousel-inner">
                     <!-- Single item -->
                     <div
-                        v-for="(reel, index) in reels"
+                        v-for="(reel, index) in reversedReels"
                         :key="reel.name"
                         class="carousel-item"
                         :class="{ active: index === activeIndex }"
@@ -101,18 +101,20 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
+// TODO: Reels shoudl scroll infinitely
+// TODO: The page should open with reel in the middle and two other on the sides
+
 // Import data from store
 const reelsStore = useReelsStore()
 const reels = reelsStore.reels
+const reversedReels = reels.slice().reverse()
 
 // Desktop
 const modules = [Navigation]
 
 // Apply inactive classes to videos
 const onSlideChangeTransitionEnd = (swiper: any) => {
-    const videos = Array.from(
-        document.querySelectorAll('.desktop video')
-    ) as HTMLVideoElement[]
+    const videos = Array.from(document.querySelectorAll('.desktop video')) as HTMLVideoElement[]
     videos.forEach((video, index) => {
         if (index === swiper.activeIndex) {
             video.classList.remove('inactive')
@@ -128,9 +130,7 @@ const onSlideChangeTransitionEnd = (swiper: any) => {
 }
 // Apply inactive classes to all the videos except the first one when page loads
 onMounted(() => {
-    const videos = Array.from(
-        document.querySelectorAll('.desktop video')
-    ) as HTMLVideoElement[]
+    const videos = Array.from(document.querySelectorAll('.desktop video')) as HTMLVideoElement[]
     videos.forEach((video, index) => {
         if (index === 0) {
             video.classList.remove('transition')
@@ -210,6 +210,13 @@ const handleTouchEnd = (evt: TouchEvent) => {
 
 <style scoped lang="scss">
 .view {
+    padding: 1rem 0;
+    margin: 0;
+
+    h1 {
+        margin: 1rem 2rem;
+    }
+
     /* Desktop vs Mobile */
     .desktop {
         display: block;
@@ -243,7 +250,7 @@ const handleTouchEnd = (evt: TouchEvent) => {
             img,
             video {
                 display: block;
-                width: 100%;
+                width: 84%;
                 height: auto;
                 transition: filter 0.3s ease-out;
             }
@@ -255,6 +262,7 @@ const handleTouchEnd = (evt: TouchEvent) => {
             .video-text {
                 position: absolute;
                 bottom: 60px;
+                left: -24px;
                 width: 100%;
                 text-align: center;
                 color: var(--light-gray);
@@ -267,14 +275,14 @@ const handleTouchEnd = (evt: TouchEvent) => {
             color: var(--main-bg-color);
             height: 50px !important;
             width: 50px !important;
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f5f5f5' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234e4e50' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
         }
 
         .swiper-button-prev {
             color: var(--main-bg-color);
             height: 50px !important;
             width: 50px !important;
-            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23f5f5f5' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%234e4e50' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E") !important;
         }
 
         .swiper-button-next::after,
