@@ -4,11 +4,13 @@
             <img :src="contact_photo" alt="contact photo" />
         </div>
         <section class="contact_container">
-            <h3>Contact me</h3>
-            <p>
-                Ready to collaborate? I'd love to hear about your project and how we can bring it to
-                life
-            </p>
+            <div class="description_container">
+                <h3>Contact me</h3>
+                <p>
+                    Ready to collaborate? I'd love to hear about your project and how we can bring
+                    it to life
+                </p>
+            </div>
             <div class="forms_container">
                 <div class="contact_form">
                     <span>P.S. It goes straight to email box, and I read it every day!</span>
@@ -45,7 +47,12 @@ import ContactForm from '@/components/ContactForm.vue'
         margin-bottom: 2rem;
         margin-left: 2rem;
 
+        .description_container {
+            width: 80%
+        }
+
         .forms_container {
+            width: 80%;
             justify-content: center;
             align-items: center;
 
