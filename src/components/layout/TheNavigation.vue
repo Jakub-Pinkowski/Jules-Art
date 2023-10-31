@@ -87,11 +87,11 @@ const close = () => {
 
     span {
         display: block;
-        width: 33px;
-        height: 4px;
+        width: 50px;
+        height: 3px;
         margin-bottom: 5px;
         position: relative;
-        background: var(--highlight-color);
+        background: var(--light-gray);
         border-radius: 3px;
         z-index: 10000;
         transform-origin: 4px 0px;

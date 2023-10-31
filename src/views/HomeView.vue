@@ -3,6 +3,7 @@
         <h1>Jules-Art</h1>
         <h2>Videography & Photography</h2>
         <div class="sections_container">
+            <MainVideo />
             <About />
             <Portfolio />
             <Services />
@@ -16,6 +17,7 @@ import About from '@/components/About.vue'
 import Portfolio from '@/components/Portfolio.vue'
 import Services from '@/components/Services.vue'
 import Contact from '@/components/Contact.vue'
+import MainVideo from '@/components/MainVideo.vue'
 </script>
 
 <style scoped lang="scss">
