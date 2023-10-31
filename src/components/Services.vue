@@ -1,7 +1,7 @@
 <template>
     <section class="services main_section">
         <section class="text">
-            <h3>Services</h3>
+            <h3>Skills</h3>
             <p>
                 {{ description }}
             </p>
