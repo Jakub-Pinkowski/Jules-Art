@@ -2,9 +2,6 @@
     <section class="services main_section">
         <section class="text">
             <h3>Skills</h3>
-            <p>
-                {{ description }}
-            </p>
             <ul class="services_list">
                 <li v-for="item in services">
                     <div class="service-item">
@@ -27,27 +24,25 @@
 import service_photo_1 from '@/assets/images/services_1.jpg'
 import service_photo_2 from '@/assets/images/services_2.jpg'
 
-const description =
-    'Looking for a videographer for your next project? I offer a range of services, including:'
 
 const services = [
     {
         title: 'Short Film Production',
-        description: 'from concept to post-production.',
+        description: 'From concept to post-production.',
     },
     {
         title: 'Promotional Videos',
         description:
-            'creation of promotional videos for products like: cosmetics, clothes, books, and all you can think about!',
+            'Creation of videos for products like: cosmetics, clothes, books, and all you can think about!',
     },
     {
         title: 'Video Editing',
         description:
-            'if you have existing footage, I can edit it into a polished, professional video.',
+            'Da Vinci Resolve',
     },
     {
         title: 'Scenario writing',
-        description: 'scenarios for short films 2-3 min. ',
+        description: 'Scenarios for short films 2-3 min. ',
     },
 ]
 </script>
