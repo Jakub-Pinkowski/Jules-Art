@@ -4,7 +4,9 @@
         <section class="promo_container">
             <video class="promo" :src="promo" autoplay muted ref="videoElement"></video>
             <span class="scroll"> Scroll down </span>
-            <button @click="toggleMute">Icon goes here</button>
+            <button @click="toggleMute">
+                <i :class="muteIconClass"></i>
+            </button>
         </section>
         <section class="blocker">
             <h1>Nothing for now</h1>
@@ -15,17 +17,33 @@
 <script setup lang="ts">
 import promo from '@/assets/videos/promo.mov'
 import TheNavigation from './layout/TheNavigation.vue'
-import { ref } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
 // Reference to the video element
 const videoElement = ref<HTMLVideoElement | null>(null)
+
+// Variable to track mute state
+const isMuted = ref(false)
 
 // Function to toggle video mute state
 const toggleMute = () => {
     if (videoElement.value) {
         videoElement.value.muted = !videoElement.value.muted
+        isMuted.value = videoElement.value.muted
     }
 }
+
+// Computed property to determine the icon class based on mute state
+const muteIconClass = computed(() => {
+    return isMuted.value ? 'fas fa-volume-mute' : 'fas fa-volume-up'
+})
+
+// Set the initial mute state on component mount
+onMounted(() => {
+    if (videoElement.value) {
+        isMuted.value = videoElement.value.muted
+    }
+})
 </script>
 
 <style scoped lang="scss">
@@ -35,7 +53,7 @@ const toggleMute = () => {
         top: 0;
         left: 0;
         width: 100%;
-        height: 100vh; /* Set the height to 100vh to take up the entire viewport */
+        height: 100vh;
         overflow: hidden;
         z-index: 1;
 
@@ -47,7 +65,6 @@ const toggleMute = () => {
 
         .scroll {
             position: absolute;
-            // Should be bottom left corner of the video
             bottom: 0;
             left: 0;
             color: var(--light-gray);
@@ -60,6 +77,14 @@ const toggleMute = () => {
             position: absolute;
             bottom: 10px;
             right: 10px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+
+            i {
+                font-size: 2rem;
+                color: var(--light-gray);
+            }
         }
     }
     .blocker {
