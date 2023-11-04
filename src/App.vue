@@ -48,6 +48,8 @@ import TheNavigation from '@/components/layout/TheNavigation.vue'
 .body {
     display: flex;
     flex-direction: column;
+    // turn off horizontal scrolling for the whole website
+    overflow-x: hidden;
 }
 
 h1 {

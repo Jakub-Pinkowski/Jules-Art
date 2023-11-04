@@ -1,9 +1,11 @@
 <template>
+    <TheNavigation />
     <section class="main_video">
         <section class="promo_container">
-            <video class="promo" :src="promo" autoplay muted></video>
+            <video class="promo" :src="promo" autoplay muted controls></video>
+            <span class="scroll"> Scroll down </span>
         </section>
-        <section class="text">
+        <section class="blocker">
             <h1>Nothing for now</h1>
         </section>
     </section>
@@ -11,8 +13,7 @@
 
 <script setup lang="ts">
 import promo from '@/assets/videos/promo.mov'
-
-// TODO: Add controls just to enable sound
+import TheNavigation from './layout/TheNavigation.vue'
 </script>
 
 <style scoped lang="scss">
@@ -31,10 +32,21 @@ import promo from '@/assets/videos/promo.mov'
             width: 100%;
             height: 100%;
         }
+
+        .scroll {
+            position: absolute;
+            // Should be bottom left corner of the video
+            bottom: 0;
+            left: 0;
+            color: var(--light-gray);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
     }
-    .text{
+    .blocker {
         display: block;
-        height: 100vh;
+        height: 80vh;
     }
 }
 </style>

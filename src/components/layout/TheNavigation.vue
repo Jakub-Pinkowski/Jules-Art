@@ -55,7 +55,7 @@ const close = () => {
 
     & > input {
         display: block;
-        width: 40px;
+        width: 60px;
         height: 32px;
         position: absolute;
         top: -7px;
@@ -68,7 +68,7 @@ const close = () => {
 
     & > input:checked ~ span {
         opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
+        transform: rotate(23deg) translate(-2px, -1px);
         background: #232323;
     }
 
@@ -78,7 +78,7 @@ const close = () => {
     }
 
     & > input:checked ~ span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
+        transform: rotate(-23deg) translate(0, -1px);
     }
 
     & > input:checked ~ #menu {
