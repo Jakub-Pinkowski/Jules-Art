@@ -2,8 +2,9 @@
     <TheNavigation />
     <section class="main_video">
         <section class="promo_container">
-            <video class="promo" :src="promo" autoplay muted controls></video>
+            <video class="promo" :src="promo" autoplay muted ref="videoElement"></video>
             <span class="scroll"> Scroll down </span>
+            <button @click="toggleMute">Icon goes here</button>
         </section>
         <section class="blocker">
             <h1>Nothing for now</h1>
@@ -14,6 +15,17 @@
 <script setup lang="ts">
 import promo from '@/assets/videos/promo.mov'
 import TheNavigation from './layout/TheNavigation.vue'
+import { ref } from 'vue'
+
+// Reference to the video element
+const videoElement = ref<HTMLVideoElement | null>(null)
+
+// Function to toggle video mute state
+const toggleMute = () => {
+    if (videoElement.value) {
+        videoElement.value.muted = !videoElement.value.muted
+    }
+}
 </script>
 
 <style scoped lang="scss">
@@ -42,6 +54,12 @@ import TheNavigation from './layout/TheNavigation.vue'
             text-transform: uppercase;
             font-size: 0.8rem;
             font-weight: 700;
+        }
+
+        button {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
         }
     }
     .blocker {
