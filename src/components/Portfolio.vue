@@ -25,7 +25,6 @@ const views = viewStore.views
 
 <style scoped lang="scss">
 .portfolio {
-    background-color: var(--light-gray);
     margin: 0;
     padding-top: 5rem;
     padding-bottom: 5rem;

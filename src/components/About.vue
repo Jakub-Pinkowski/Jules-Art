@@ -1,4 +1,8 @@
 <template>
+    <section class="title">
+        <h1>Jules-Art</h1>
+        <h2>Videography & Photography</h2>
+    </section>
     <section class="about">
         <section class="text">
             <div class="about_me">
@@ -36,6 +40,10 @@ const aesthetics_2 = '...but I am always up for experiments!'
 </script>
 
 <style scoped lang="scss">
+.title {
+    margin: 1rem 2rem;
+    margin-bottom: 0;
+}
 .about {
     display: flex;
     margin: 1rem 2rem;

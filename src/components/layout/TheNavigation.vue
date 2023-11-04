@@ -55,7 +55,7 @@ const close = () => {
 
     & > input {
         display: block;
-        width: 40px;
+        width: 60px;
         height: 32px;
         position: absolute;
         top: -7px;
@@ -68,7 +68,7 @@ const close = () => {
 
     & > input:checked ~ span {
         opacity: 1;
-        transform: rotate(45deg) translate(-2px, -1px);
+        transform: rotate(23deg) translate(-2px, -1px);
         background: #232323;
     }
 
@@ -78,7 +78,7 @@ const close = () => {
     }
 
     & > input:checked ~ span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(0, -1px);
+        transform: rotate(-23deg) translate(0, -1px);
     }
 
     & > input:checked ~ #menu {
@@ -87,11 +87,11 @@ const close = () => {
 
     span {
         display: block;
-        width: 33px;
-        height: 4px;
+        width: 50px;
+        height: 3px;
         margin-bottom: 5px;
         position: relative;
-        background: var(--highlight-color);
+        background: var(--light-gray);
         border-radius: 3px;
         z-index: 10000;
         transform-origin: 4px 0px;
@@ -125,6 +125,16 @@ const close = () => {
         li {
             padding: 10px 0;
             font-size: 22px;
+        }
+    }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+    #menuToggle {
+        span {
+            background-color: var(--gray);
         }
     }
 }
