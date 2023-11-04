@@ -17,10 +17,7 @@ import promo from '@/assets/videos/promo.mov'
 import TheNavigation from './layout/TheNavigation.vue'
 import { ref, computed, onMounted } from 'vue'
 
-// Reference to the video element
 const videoElement = ref<HTMLVideoElement | null>(null)
-
-// Variable to track mute state
 const isMuted = ref(false)
 
 // Function to toggle video mute state
@@ -36,7 +33,6 @@ const muteIconClass = computed(() => {
     return isMuted.value ? 'fas fa-volume-mute' : 'fas fa-volume-up'
 })
 
-// Set the initial mute state on component mount
 onMounted(() => {
     if (videoElement.value) {
         isMuted.value = videoElement.value.muted
