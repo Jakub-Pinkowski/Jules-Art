@@ -1,9 +1,7 @@
 <template>
     <section class="view">
-        <h1>Jules-Art</h1>
-        <h2>Videography & Photography</h2>
         <div class="sections_container">
-            <MainVideo />
+            <MainVideo v-if="isDesktop" />
             <About />
             <Portfolio />
             <Services />
@@ -18,16 +16,15 @@ import Portfolio from '@/components/Portfolio.vue'
 import Services from '@/components/Services.vue'
 import Contact from '@/components/Contact.vue'
 import MainVideo from '@/components/MainVideo.vue'
+
+import { computed } from 'vue'
+
+const isDesktop = computed(() => window.innerWidth >= 769)
 </script>
 
 <style scoped lang="scss">
 .view {
     margin: 0;
-
-    h1,
-    h2 {
-        margin: 1rem 2rem;
-    }
 
     .sections_container {
         margin-top: 3rem;

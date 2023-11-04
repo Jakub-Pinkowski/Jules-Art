@@ -2,15 +2,13 @@
     <TheNavigation />
     <section class="main_video">
         <section class="promo_container">
-            <video class="promo" :src="promo" autoplay muted ref="videoElement"></video>
+            <video class="promo" :src="promo" autoplay loop muted ref="videoElement"></video>
             <span class="scroll"> Scroll down </span>
             <button @click="toggleMute">
                 <i :class="muteIconClass"></i>
             </button>
         </section>
-        <section class="blocker">
-            <h1>Nothing for now</h1>
-        </section>
+        <section class="blocker"></section>
     </section>
 </template>
 
@@ -82,14 +80,31 @@ onMounted(() => {
             cursor: pointer;
 
             i {
-                font-size: 2rem;
+                font-size: 2.5rem;
                 color: var(--light-gray);
+                animation: bounce 1s 3;
             }
         }
     }
     .blocker {
         display: block;
-        height: 80vh;
+        height: 90vh;
+    }
+}
+
+@keyframes bounce {
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
     }
 }
 </style>
