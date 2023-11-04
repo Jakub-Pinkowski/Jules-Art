@@ -128,4 +128,14 @@ const close = () => {
         }
     }
 }
+
+/* Mobile */
+
+@media screen and (max-width: 768px) {
+    #menuToggle {
+        span {
+            background-color: var(--gray);
+        }
+    }
+}
 </style>
