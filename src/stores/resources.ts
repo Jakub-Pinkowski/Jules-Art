@@ -11,7 +11,8 @@ export const useResourceStore = defineStore({
                 name: 'Storyboard',
                 src: dummy,
                 image: dummy_image,
-                description: 'Lorem Ipsum',
+                description:
+                    ' Storyboard is a graphic organizer that consists of illustrations or images displayed in sequence for the purpose of pre-visualizing a motion picture, animation, motion graphic or interactive media sequence',
             },
         ],
     }),

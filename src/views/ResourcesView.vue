@@ -2,7 +2,7 @@
     <section class="view">
         <h1>Resources</h1>
         <div class="resources-gallery">
-            <div v-for="(resource, index) in resources">
+            <div class="resource" v-for="(resource, index) in resources">
                 <div class="image-container">
                     <img :src="resource.image" alt="" />
                 </div>
@@ -10,7 +10,7 @@
                     <h2>{{ resource.name }}</h2>
                     <p>{{ resource.description }}</p>
                 </div>
-                <button @click="downloadResource(resource.src, resource.name)">Download</button>
+                <Button @click="downloadResource(resource.src, resource.name)">Download</Button>
             </div>
         </div>
     </section>
@@ -18,6 +18,7 @@
 
 <script setup lang="ts">
 import { useResourceStore } from '@/stores/resources'
+import Button from '@/composables/Button.vue'
 
 const resourceStore = useResourceStore()
 const resources = resourceStore.resources
@@ -34,10 +35,20 @@ const downloadResource = (url: string, name: string) => {
 
 <style scoped lang="scss">
 .view {
-    .resources-gallery{
+    .resources-gallery {
+        min-height: 80vh;
+        .resource {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: justify;
+        }
         .image-container {
-            width: 200px;
-            height: 200px;
+            border: 1px solid var(--dark-gray);
+            border-radius: 5px;
+            width: 100%;
+            height: auto;
             overflow: hidden;
 
             img {
@@ -47,8 +58,13 @@ const downloadResource = (url: string, name: string) => {
             }
         }
 
+        .text {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+        }
+
         button {
-            
+            width: 200px;
         }
     }
 }
