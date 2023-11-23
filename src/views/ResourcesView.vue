@@ -36,6 +36,7 @@ const downloadResource = (url: string, name: string) => {
 <style scoped lang="scss">
 .view {
     .resources-gallery {
+        margin-top: 1rem;
         min-height: 80vh;
         .resource {
             width: 30%;
