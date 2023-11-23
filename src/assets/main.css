@@ -1,6 +1,6 @@
 :root {
     --main-bg-color: #240046;
-    --light-bg-color: #f8f9fa;
+    --light-bg-color: #1e1f21;
     --dark-accent: #3c096c;
     --highlight-color: #5a189a;
     --accent-color: #9d4edd;
@@ -8,6 +8,7 @@
     --dark-gray: #28282a;
     --gray: #4e4e50;
     --light-gray: #f3f5f7;
+    --white: #ffffff;
     --primary-font: 'Montserrat', sans-serif;
     --secondary-font: 'Work Sans', sans-serif;
 }

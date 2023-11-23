@@ -46,6 +46,10 @@ const downloadResource = (url: string, name: string) => {
                 object-fit: cover;
             }
         }
+
+        button {
+            
+        }
     }
 }
 </style>

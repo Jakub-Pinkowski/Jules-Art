@@ -29,7 +29,7 @@
                     v-model="message"
                     required
                 ></textarea>
-                <button class="btn btn-sm" type="submit">Submit</button>
+                <Button type="submit">Submit</Button>
             </form>
         </div>
     </div>
@@ -38,6 +38,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import axios from 'axios'
+import Button from '@/composables/Button.vue'
 
 const name = ref('')
 const email = ref('')
@@ -109,16 +110,7 @@ form {
     }
 
     button {
-        margin: 1rem 0;
         width: 90px;
-        border: 1px solid var(--dark-accent);
-        color: var(--main-bg-color);
-        transition: background-color 0.5s ease;
-    }
-
-    button:hover {
-        border: 1px solid var(--dark-accent);
-        background-color: var(--light-accent);
     }
 }
 

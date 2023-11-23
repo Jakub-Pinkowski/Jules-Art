@@ -9,7 +9,7 @@
                     <img :src="view.image" :alt="view.name" />
                 </router-link>
                 <router-link :to="view.route">
-                    <button class="btn btn-sm">View</button>
+                    <Button>View</Button>
                 </router-link>
             </li>
         </ul>
@@ -18,6 +18,7 @@
 
 <script setup lang="ts">
 import { useViewStore } from '@/stores/views'
+import Button from '@/composables/Button.vue'
 
 const viewStore = useViewStore()
 const views = viewStore.views
@@ -52,18 +53,8 @@ const views = viewStore.views
             padding: 1rem;
 
             button {
-                background-color: var(--light-gray);
                 margin-top: 3rem;
                 width: 200px;
-                border: 1px solid var(--dark-accent);
-                color: var(--main-bg-color);
-                transition: background-color 0.5s ease;
-                transition: transform 0.3s ease-in-out;
-            }
-
-            button:hover {
-                border: 1px solid var(--dark-accent);
-                background-color: var(--light-accent);
             }
 
             img {
