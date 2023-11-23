@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 
 import dummy from '@/assets/resources/dummy.pdf'
+import dummy_image from '@/assets/resources/dummy.jpg'
 
 export const useResourceStore = defineStore({
     id: 'resourceStore',
@@ -9,6 +10,7 @@ export const useResourceStore = defineStore({
             {
                 name: 'Storyboard',
                 src: dummy,
+                image: dummy_image,
                 description: 'Lorem Ipsum',
             },
         ],
