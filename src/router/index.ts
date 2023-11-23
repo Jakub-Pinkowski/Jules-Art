@@ -25,6 +25,11 @@ const router = createRouter({
             component: () => import('../views/ReelsView.vue'),
         },
         {
+            path: '/resources',
+            name: 'resources',
+            component: () => import('../views/ResourcesView.vue'),
+        },
+        {
             // Cath all 404, redirect to home
             path: '/:pathMatch(.*)*',
             name: 'not-found',
