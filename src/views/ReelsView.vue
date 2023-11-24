@@ -101,7 +101,7 @@ import 'swiper/css/effect-coverflow'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
-// TODO: Reels shoudl scroll infinitely
+// TODO: Reels should scroll infinitely
 // TODO: The page should open with reel in the middle and two other on the sides
 
 // Import data from store
