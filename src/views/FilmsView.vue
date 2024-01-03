@@ -8,6 +8,7 @@
                     :poster="video.poster"
                     class="w-100 shadow-1-strong rounded mb-4"
                     controls
+                    controlsList="nodownload"
                 ></video>
                 <h3>{{ video.name }}</h3>
             </div>
