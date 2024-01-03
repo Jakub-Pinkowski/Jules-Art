@@ -24,14 +24,9 @@ export const useReelsStore = defineStore({
                 poster: reel_1_poster,
             },
             {
-                name: 'Mon Paris',
-                src: reel_4,
-                poster: reel_4_poster,
-            },
-            {
-                name: 'Time for the sun',
-                src: reel_5,
-                poster: reel_5_poster,
+                name: 'Your scent',
+                src: reel_3,
+                poster: reel_3_poster,
             },
             {
                 name: 'Sunlight',
@@ -39,10 +34,11 @@ export const useReelsStore = defineStore({
                 poster: reel_2_poster,
             },
             {
-                name: 'Your scent',
-                src: reel_3,
-                poster: reel_3_poster,
+                name: 'Mon Paris',
+                src: reel_4,
+                poster: reel_4_poster,
             },
+
             {
                 name: 'Sunny days',
                 src: reel_6,
