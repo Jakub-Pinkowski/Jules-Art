@@ -14,6 +14,7 @@ dist-ssr
 coverage
 *.local
 *.mov
+*.mp4
 
 /cypress/videos/
 /cypress/screenshots/
