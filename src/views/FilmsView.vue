@@ -4,6 +4,7 @@
         <div class="video_container">
             <div class="video" v-for="video in reversedVideos" :key="video.name">
                 <video
+                    :id="video.name"
                     :src="video.src"
                     :poster="video.poster"
                     class="w-100 shadow-1-strong rounded mb-4"
