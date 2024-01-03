@@ -15,20 +15,20 @@ const router = createRouter({
             component: () => import('../views/PhotosView.vue'),
         },
         {
-            path: '/videos',
-            name: 'videos',
-            component: () => import('../views/VideosView.vue'),
+            path: '/films',
+            name: 'films',
+            component: () => import('../views/FilmsView.vue'),
         },
         {
             path: '/reels',
             name: 'reels',
             component: () => import('../views/ReelsView.vue'),
         },
-        {
-            path: '/resources',
-            name: 'resources',
-            component: () => import('../views/ResourcesView.vue'),
-        },
+        // {
+        //     path: '/resources',
+        //     name: 'resources',
+        //     component: () => import('../views/ResourcesView.vue'),
+        // },
         {
             // Cath all 404, redirect to home
             path: '/:pathMatch(.*)*',
